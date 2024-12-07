@@ -1,5 +1,6 @@
 import { draftMode } from "next/headers";
 import "./globals.css";
+import { sora, sourceCodePro, spaceGrotesk } from "@/utils/fonts";
 // import { inter } from "@/utils/fonts";
 // import { PreviewMode } from "@/utils/preview-mode";
 // import Footer from "@/components/ui/Footer";
@@ -14,7 +15,9 @@ export default async function RootLayout({
   // const { isEnabled: isDraftMode } = await draftMode();
   return (
     <html lang="en">
-      <body>
+      <body
+        className={`${sora.variable} ${sourceCodePro.variable} ${spaceGrotesk.variable}`}
+      >
         <div className="grid min-h-[100dvh] grid-rows-[auto_1fr_auto]">
           {/* <Header /> */}
           <main role="main">{children}</main>

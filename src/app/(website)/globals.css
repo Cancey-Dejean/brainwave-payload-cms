@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @layer base {
@@ -62,5 +62,26 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+} */
+
+@import "tailwindcss";
+
+@theme {
+  --font-*: initial;
+  /* --text-*: initial; */
+  --color-*: initial;
+  --radius-*: initial;
+
+  --color-transparent: transparent;
+
+  --font-sora: "Sora", sans-serif;
+  --font-code: "Source Code Pro", monospace;
+  --font-grotesk: "Space Grotesk", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sora;
   }
 }
