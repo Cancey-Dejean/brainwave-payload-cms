@@ -1,7 +1,7 @@
 export const VERSION_INTERVAL = {
   drafts: {
     autosave: {
-      interval: 1000,
+      interval: 500,
     },
   },
 };

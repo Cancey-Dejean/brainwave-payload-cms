@@ -9,9 +9,10 @@ export const Pages: CollectionConfig = {
   slug: "pages",
   admin: {
     useAsTitle: "title",
-    // livePreview: {
-    //   url: ({ data }) => `${getServerSideURL()}/${data?.slug}`,
-    // },
+    livePreview: {
+      url: ({ data }) =>
+        `${getServerSideURL()}${data?.slug ? `/${data.slug}` : "/"}`,
+    },
   },
   access: {
     read: ({ req }) => {

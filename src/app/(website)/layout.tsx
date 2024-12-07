@@ -2,17 +2,17 @@ import { draftMode } from "next/headers";
 import "./globals.css";
 import { sora, sourceCodePro, spaceGrotesk } from "@/utils/fonts";
 // import { inter } from "@/utils/fonts";
-// import { PreviewMode } from "@/utils/preview-mode";
+import { PreviewMode } from "@/utils/preview-mode";
 // import Footer from "@/components/ui/Footer";
 // import Header from "@/components/ui/Header";
-// import { LivePreviewListener } from "@/utils/live-preview-listener";
+import { LivePreviewListener } from "@/utils/live-preview-listener";
 
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // const { isEnabled: isDraftMode } = await draftMode();
+  const { isEnabled: isDraftMode } = await draftMode();
   return (
     <html lang="en">
       <body
@@ -23,9 +23,9 @@ export default async function RootLayout({
           <main role="main">{children}</main>
           {/* <Footer /> */}
         </div>
-        {/* {isDraftMode && <PreviewMode />} */}
+        {isDraftMode && <PreviewMode />}
 
-        {/* <LivePreviewListener /> */}
+        <LivePreviewListener />
       </body>
     </html>
   );
