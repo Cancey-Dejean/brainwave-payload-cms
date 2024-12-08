@@ -8,7 +8,7 @@ export const sora = localFont({
 
 export const sourceCodePro = localFont({
   src: "../../public/fonts/SourceCodePro-VF.woff2",
-  variable: "--font-source-code-pro",
+  variable: "--font-code",
   weight: "400 600 700",
 });
 

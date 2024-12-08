@@ -2,21 +2,22 @@ import { ButtonProps } from "@/components/ui/Button";
 
 export type SimpleImage = {
   url: string;
-  alt: string;
-  width: number;
-  height: number;
+  alt?: string;
+  width?: number;
+  height?: number;
 };
 
-export type Link = {
+export type LinkItem = {
+  id?: string;
   label: string;
-  url: string;
+  url?: string;
   newTab?: boolean;
 };
 
-export type Button = Link & {
-  variant: ButtonProps["variant"];
-};
+// export type Button = LinkItem & {
+//   variant: ButtonProps["variant"];
+// };
 
-export type ButtonLink = {
-  button: Button;
-};
+// export type ButtonLink = {
+//   button: Button;
+// };
