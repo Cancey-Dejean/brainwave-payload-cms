@@ -63,7 +63,6 @@ export default function Hero({
   imageText,
   description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, dolore.",
   button,
-  socialProofText,
   socialProof,
 }: {
   headline: string;
@@ -73,7 +72,13 @@ export default function Hero({
   description?: string;
   button: LinkItem;
   socialProofText?: string;
-  socialProof?: Logo[];
+  socialProof?: {
+    title: string;
+    logos: {
+      id: string;
+      logo: SimpleImage;
+    }[];
+  };
 } & React.HTMLAttributes<HTMLDivElement>) {
   const parallaxRef = useRef(null);
 
@@ -131,7 +136,7 @@ export default function Hero({
                 {imageText && (
                   <Generating
                     text={imageText || "Text goes here"}
-                    className="absolute right-4 bottom-5 left-4 md:right-auto md:bottom-8 md:left-1/2 md:w-[31rem] md:-translate-x-1/2"
+                    className="absolute right-4 bottom-5 left-4 text-white md:right-auto md:bottom-8 md:left-1/2 md:w-[31rem] md:-translate-x-1/2"
                   />
                 )}
 
@@ -181,38 +186,24 @@ export default function Hero({
 
         {socialProof && (
           <CompanyLogos
-            text={socialProofText}
-            className="relative z-10 mt-20 hidden lg:block"
+            text={socialProof.title}
+            className="relative z-10 mt-20 hidden text-white lg:block"
           >
-            {socialProof.map((company) => (
+            {socialProof.logos.map(({ id, logo }) => (
               <li
                 className="flex h-[8.5rem] flex-1 items-center justify-center"
-                key={company._key}
+                key={id}
               >
-                {company.url !== null ? (
-                  <Link href={company.url || ""}>
-                    <span className="sr-only">{company.title}</span>
-                    <Image
-                      src={
-                        company.iconUrl ||
-                        "https://dummyimage.com/134x28.png/ac6aff/ffffff"
-                      }
-                      width={134}
-                      height={28}
-                      alt={company.alt || "Company Logo"}
-                    />
-                  </Link>
-                ) : (
-                  <>
-                    <span className="sr-only">{company.title}</span>
-                    <Image
-                      src={company.iconUrl}
-                      width={134}
-                      height={28}
-                      alt={company.title}
-                    />
-                  </>
-                )}
+                <>
+                  <span className="sr-only">{logo.alt}</span>
+                  <Image
+                    src={logo.url || ""}
+                    width={134}
+                    height={28}
+                    alt={logo.alt || "Company Logo"}
+                    priority
+                  />
+                </>
               </li>
             ))}
           </CompanyLogos>

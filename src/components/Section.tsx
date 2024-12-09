@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { SectionSvg } from "./ui/icons";
+import { SectionSvg } from "./icons";
 
 type SectionProps = {
   className?: string;

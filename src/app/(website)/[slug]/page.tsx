@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 import { Media, Page } from "@/payload-types";
 import { Metadata } from "next";
 import { queryPageBySlug } from "@/lib/queries";
-
+import { getPayload } from "payload";
+import config from "@payload-config";
 import AddContent from "@/utils/add-content";
 import { RenderBlocks } from "@/utils/renderBlocks";
 
@@ -56,7 +57,7 @@ export default async function PageContent({
 
   const layout = page?.layout || [];
 
-  // console.log(layout);
+  console.log(layout[1]);
 
   return (
     <>
@@ -69,4 +70,21 @@ export default async function PageContent({
       )}
     </>
   );
+}
+
+export async function generateStaticParams() {
+  try {
+    const payload = await getPayload({ config });
+    const pages = await payload.find({
+      collection: "pages",
+      depth: 1, // Limit the depth of relationships to prevent circular references
+    });
+
+    return pages.docs
+      ?.filter((doc) => doc.slug !== "home")
+      .map(({ slug }) => ({ slug }));
+  } catch (error) {
+    console.error("Error generating static params:", error);
+    return []; // Return empty array to prevent build failure
+  }
 }

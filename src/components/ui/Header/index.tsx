@@ -3,12 +3,13 @@ import { useState } from "react";
 import { disablePageScroll, enablePageScroll } from "@fluejs/noscroll";
 import Link from "next/link";
 import Image from "next/image";
-import NavLink from "./NavLink";
+import NavLink from "./_components/NavLink";
 
 import { Button } from "@/components/ui/Button";
-import { MenuSvg } from "@/components/ui/icons";
+import { MenuSvg } from "@/components/icons";
 import { LinkItem, SimpleImage } from "@/types";
 import { HamburgerMenu } from "@/components/ui/Header/_components/designs";
+import { cn } from "@/lib/utils";
 
 // export const navigation = [
 //   {
@@ -90,9 +91,14 @@ export default function Header({
   };
   return (
     <header
-      className={`border-brand-600 lg:bg-brand-900/90 sticky top-0 left-0 z-50 w-full border-b lg:backdrop-blur-sm ${openNavigation ? "bg-brand-900" : "bg-brand-900/90 backdrop-blur-sm"}`}
+      // className={` lg:bg-brand-900/90 sticky top-0 left-0 z-50 w-full border-b lg:backdrop-blur-sm ${openNavigation ? "bg-brand-900" : "bg-brand-900/90 backdrop-blur-sm"}`}
+
+      className={cn(
+        "xl:bg-brand-900/90 sticky top-0 left-0 z-50 w-full border-b lg:backdrop-blur-sm",
+        openNavigation ? "bg-brand-900" : "bg-brand-900/90 backdrop-blur-sm",
+      )}
     >
-      <div className="flex items-center px-5 max-lg:py-4 lg:px-7.5 xl:px-10">
+      <div className="flex items-center px-5 max-xl:py-4 lg:px-7.5 xl:px-10">
         <Link className="w-[12rem]" href="#hero">
           <Image
             src={logo?.url || "https://dummyimage.com/190x40.png/ac6aff/ffffff"}
@@ -104,9 +110,13 @@ export default function Header({
         </Link>
 
         <nav
-          className={`${
-            openNavigation ? "flex" : "hidden"
-          } bg-brand-900 fixed top-[5rem] right-0 bottom-0 left-0 lg:static lg:mx-auto lg:flex lg:bg-transparent`}
+          // className={`${
+          //   openNavigation ? "flex" : "hidden"
+          // } bg-brand-900 fixed top-[5rem] right-0 bottom-0 left-0 xl:static xl:mx-auto xl:flex xl:bg-transparent`}
+          className={cn(
+            "bg-brand-900 fixed top-[5rem] right-0 bottom-0 left-0 xl:static xl:mx-auto xl:flex xl:bg-transparent",
+            openNavigation ? "flex" : "hidden",
+          )}
         >
           <div className="relative z-2 flex flex-col items-center justify-center lg:flex-row">
             {primaryMenu &&
@@ -123,7 +133,7 @@ export default function Header({
           <HamburgerMenu />
         </nav>
 
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center gap-8 xl:flex">
           {/* Authentication */}
           <div className="flex items-center gap-8">
             {secondaryMenu?.map((item, index) => (
@@ -146,7 +156,7 @@ export default function Header({
 
         <Button
           as="button"
-          className="ml-auto lg:hidden"
+          className="ml-auto xl:hidden"
           px="px-3"
           onClick={toggleNavigation}
         >

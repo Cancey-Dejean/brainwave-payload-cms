@@ -42,6 +42,7 @@ export const Header: GlobalConfig = {
       name: "primaryMenu",
       label: "Primary Menu",
       type: "array",
+      minRows: 1,
       maxRows: 5,
       fields: [LabelField, UrlField, NewTabField],
     },

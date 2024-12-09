@@ -1,4 +1,5 @@
 import Hero from "@/blocks/Hero";
+import Features from "@/blocks/Features";
 
 export const RenderBlocks = (section: any) => {
   const { blockType, id, ...rest } = section;
@@ -6,5 +7,7 @@ export const RenderBlocks = (section: any) => {
   switch (blockType) {
     case "hero":
       return <Hero {...rest} key={id} />;
+    case "features":
+      return <Features {...rest} key={id} />;
   }
 };

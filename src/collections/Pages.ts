@@ -1,3 +1,4 @@
+import { Features } from "@/blocks/Features/schema";
 import { Hero } from "@/blocks/Hero/schema";
 import { VERSION_INTERVAL } from "@/constants";
 import { slugGeneratorField } from "@/lib/fields/slugGeneratorField";
@@ -67,7 +68,7 @@ export const Pages: CollectionConfig = {
       name: "layout",
       label: "Layout",
       type: "blocks",
-      blocks: [Hero],
+      blocks: [Hero, Features],
     },
   ],
 };

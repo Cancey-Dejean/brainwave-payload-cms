@@ -1,5 +1,5 @@
 "use client";
-import { PlusSvg } from "@/components/ui/icons";
+import { PlusSvg } from "@/components/icons";
 import { useEffect, useState } from "react";
 import { MouseParallax } from "react-just-parallax";
 

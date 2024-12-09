@@ -41,5 +41,33 @@ export const Hero: Block = {
       type: "text",
       defaultValue: "Text goes here...",
     },
+    {
+      name: "socialProof",
+      label: "Social Proof",
+      type: "group",
+      fields: [
+        {
+          name: "title",
+          label: "Title",
+          type: "text",
+          defaultValue: "Title",
+        },
+        {
+          name: "logos",
+          label: "Logos",
+          type: "array",
+          fields: [
+            {
+              name: "logo",
+              label: "Logo",
+              type: "upload",
+              relationTo: "media",
+            },
+          ],
+          minRows: 3,
+          maxRows: 5,
+        },
+      ],
+    },
   ],
 };

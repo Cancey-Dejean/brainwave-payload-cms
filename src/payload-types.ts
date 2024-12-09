@@ -108,21 +108,65 @@ export interface Page {
   title: string;
   slug: string;
   layout?:
-    | {
-        headline?: string | null;
-        headlineHighlight?: string | null;
-        description?: string | null;
-        button: {
-          label: string;
-          url: string;
-          newTab?: boolean | null;
-        };
-        image?: (number | null) | Media;
-        imageText?: string | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'hero';
-      }[]
+    | (
+        | {
+            headline?: string | null;
+            headlineHighlight?: string | null;
+            description?: string | null;
+            button: {
+              label: string;
+              url: string;
+              newTab?: boolean | null;
+            };
+            image?: (number | null) | Media;
+            imageText?: string | null;
+            socialProof?: {
+              title?: string | null;
+              logos?:
+                | {
+                    logo?: (number | null) | Media;
+                    id?: string | null;
+                  }[]
+                | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hero';
+          }
+        | {
+            headline?: string | null;
+            cards?:
+              | {
+                  title?: string | null;
+                  description?: {
+                    root: {
+                      type: string;
+                      children: {
+                        type: string;
+                        version: number;
+                        [k: string]: unknown;
+                      }[];
+                      direction: ('ltr' | 'rtl') | null;
+                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                      indent: number;
+                      version: number;
+                    };
+                    [k: string]: unknown;
+                  } | null;
+                  icon?: (number | null) | Media;
+                  btnText?: string | null;
+                  btnUrl?: string | null;
+                  variant?: ('v1' | 'v2' | 'v3' | 'v4' | 'v5' | 'v6') | null;
+                  backgroundImage?: (number | null) | Media;
+                  gradientLight?: boolean | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'features';
+          }
+      )[]
     | null;
   updatedAt: string;
   createdAt: string;
@@ -247,6 +291,37 @@ export interface PagesSelect<T extends boolean = true> {
                   };
               image?: T;
               imageText?: T;
+              socialProof?:
+                | T
+                | {
+                    title?: T;
+                    logos?:
+                      | T
+                      | {
+                          logo?: T;
+                          id?: T;
+                        };
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        features?:
+          | T
+          | {
+              headline?: T;
+              cards?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    btnText?: T;
+                    btnUrl?: T;
+                    variant?: T;
+                    backgroundImage?: T;
+                    gradientLight?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };

@@ -11,7 +11,7 @@ export type ButtonProps = {
   React.HTMLAttributes<HTMLAnchorElement>;
 
 export const Button = ({
-  as,
+  as: Comp = "a",
   className,
   children,
   href,
@@ -19,17 +19,16 @@ export const Button = ({
   white = false,
   ...rest
 }: ButtonProps) => {
-  const Element = as;
   const classes = `cursor-pointer font-code text-xs font-bold uppercase tracking-wider relative inline-flex items-center justify-center h-11 transition-colors hover:text-primary px-7 ${
     white ? "text-brand-900" : "text-white"
   } ${className || ""}`;
   const spanClasses = "relative z-10";
 
   return (
-    <Element className={classes} {...rest}>
+    <Comp className={classes} {...rest}>
       <span className={spanClasses}>{children || "Button"}</span>
       {ButtonSvg({ white: white })}
-    </Element>
+    </Comp>
   );
 };
 

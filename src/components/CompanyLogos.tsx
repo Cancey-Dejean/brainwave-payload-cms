@@ -7,7 +7,7 @@ export type CompanyLogosProps = {
 const CompanyLogos = ({ className, children, text }: CompanyLogosProps) => {
   return (
     <div className={className}>
-      <h5 className="tagline text-n-1/50 mb-6 text-center">
+      <h5 className="tagline mb-6 text-center text-white/50">
         {text || "Trusted by"}
       </h5>
       <ul className="flex">{children}</ul>

@@ -3,7 +3,6 @@ import "./globals.css";
 import { sora, sourceCodePro, spaceGrotesk } from "@/utils/fonts";
 
 import { PreviewMode } from "@/utils/preview-mode";
-// import Footer from "@/components/ui/Footer";
 import Header, { MenuItem } from "@/components/ui/Header";
 import { LivePreviewListener } from "@/utils/live-preview-listener";
 import ButtonGradient from "@/components/ui/Button/ButtonGradient";
