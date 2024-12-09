@@ -1,44 +1,9 @@
-import { BUTTON_SIZES, BUTTON_VARIANTS } from "@/constants";
 import { Field } from "payload";
+import { LabelField, NewTabField, UrlField } from "./linkFields";
 
 export const buttonField: Field = {
   name: "button",
-  label: "Button ",
+  label: "Button",
   type: "group",
-  fields: [
-    {
-      name: "label",
-      label: "Label",
-      type: "text",
-      required: true,
-      defaultValue: "Button",
-    },
-    {
-      name: "url",
-      label: "Url:",
-      type: "text",
-      required: true,
-      defaultValue: "#",
-    },
-    {
-      name: "newTab",
-      label: "Open in new tab?",
-      type: "checkbox",
-      defaultValue: false,
-    },
-    {
-      name: "variant",
-      label: "Variant",
-      type: "select",
-      options: BUTTON_VARIANTS,
-      defaultValue: "default",
-    },
-    {
-      name: "size",
-      label: "Size",
-      type: "select",
-      options: BUTTON_SIZES,
-      defaultValue: "default",
-    },
-  ],
+  fields: [LabelField, UrlField, NewTabField],
 };

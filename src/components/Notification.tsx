@@ -36,7 +36,7 @@ const Notification = ({
             {notificationImages.map((item, index) => (
               <li
                 key={index}
-                className="border-n-12 flex h-6 w-6 overflow-hidden rounded-full border-2"
+                className="border-brand-500 flex size-6 overflow-hidden rounded-full border-2"
               >
                 <Image
                   src={item.url}

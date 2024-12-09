@@ -1,3 +1,4 @@
+import { Collaboration } from "@/blocks/Collaboration/schema";
 import { Features } from "@/blocks/Features/schema";
 import { Hero } from "@/blocks/Hero/schema";
 import { VERSION_INTERVAL } from "@/constants";
@@ -68,7 +69,7 @@ export const Pages: CollectionConfig = {
       name: "layout",
       label: "Layout",
       type: "blocks",
-      blocks: [Hero, Features],
+      blocks: [Hero, Features, Collaboration],
     },
   ],
 };

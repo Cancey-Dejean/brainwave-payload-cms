@@ -166,6 +166,54 @@ export interface Page {
             blockName?: string | null;
             blockType: 'features';
           }
+        | {
+            headline?: string | null;
+            perks?:
+              | {
+                  text?: string | null;
+                  description?: {
+                    root: {
+                      type: string;
+                      children: {
+                        type: string;
+                        version: number;
+                        [k: string]: unknown;
+                      }[];
+                      direction: ('ltr' | 'rtl') | null;
+                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                      indent: number;
+                      version: number;
+                    };
+                    [k: string]: unknown;
+                  } | null;
+                  id?: string | null;
+                }[]
+              | null;
+            button: {
+              label: string;
+              url: string;
+              newTab?: boolean | null;
+            };
+            topDescription: {
+              root: {
+                type: string;
+                children: {
+                  type: string;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            };
+            centerImage?: (number | null) | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'collaboration';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -322,6 +370,29 @@ export interface PagesSelect<T extends boolean = true> {
                     gradientLight?: T;
                     id?: T;
                   };
+              id?: T;
+              blockName?: T;
+            };
+        collaboration?:
+          | T
+          | {
+              headline?: T;
+              perks?:
+                | T
+                | {
+                    text?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              button?:
+                | T
+                | {
+                    label?: T;
+                    url?: T;
+                    newTab?: T;
+                  };
+              topDescription?: T;
+              centerImage?: T;
               id?: T;
               blockName?: T;
             };

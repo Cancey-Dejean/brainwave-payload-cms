@@ -9,7 +9,7 @@ const TagLine = ({ className, children }: TaglineProps) => {
   return (
     <div className={`tagline flex items-center ${className || ""}`}>
       {brackets("left")}
-      <div className="text-n-3 mx-3">{children}</div>
+      <div className="text-brand-100 mx-3">{children}</div>
       {brackets("right")}
     </div>
   );
