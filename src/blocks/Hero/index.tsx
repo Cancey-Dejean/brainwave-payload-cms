@@ -2,68 +2,233 @@
 // import Container from "@/components/ui/container";
 // import SectionTitle from "@/components/ui/SectionTitle";
 
-import { cn } from "@/lib/utils";
-import { ButtonLink, SimpleImage } from "@/types";
-// import { ButtonLink, SimpleImage } from "@/types";
+"use client";
+
+import { Button } from "@/components/ui/Button";
+import Section from "@/components/Section";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
+import Generating from "@/components/Generating";
+import { ScrollParallax } from "react-just-parallax";
+import Notification from "@/components/Notification";
+
+import CompanyLogos from "@/components/CompanyLogos";
+import Container from "@/components/Container";
+
+import {
+  BackgroundCircles,
+  BottomLine,
+} from "@/blocks/Hero/_components/designs";
+import { LinkItem, SimpleImage } from "@/types";
+
+export const heroIcons = [
+  {
+    url: "/images/home-smile.svg",
+    alt: "home smile",
+  },
+  {
+    url: "/images/file-02.svg",
+    alt: "file02",
+  },
+  {
+    url: "/images/search-md.svg",
+    alt: "searchMd",
+  },
+  {
+    url: "/images/plus-square.svg",
+    alt: "plusSquare",
+  },
+];
+
+export const notificationImages = [
+  {
+    url: "/images/notification/image-4.png",
+    alt: "notification image",
+  },
+  {
+    url: "/images/notification/image-3.png",
+    alt: "notification image",
+  },
+  {
+    url: "/images/notification/image-2.png",
+    alt: "notification image",
+  },
+];
 
 export default function Hero({
-  headline,
-  text,
-  button,
+  headline = "Headline",
+  headlineHighlight,
   image,
+  imageText,
+  description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, dolore.",
+  button,
+  socialProofText,
+  socialProof,
 }: {
   headline: string;
-  className?: string;
-  text?: string;
-  button?: ButtonLink[];
+  headlineHighlight?: string;
   image: SimpleImage;
+  imageText?: string;
+  description?: string;
+  button: LinkItem;
+  socialProofText?: string;
+  socialProof?: Logo[];
 } & React.HTMLAttributes<HTMLDivElement>) {
+  const parallaxRef = useRef(null);
+
   return (
-    <section className="bg-white py-20">
-      <div className="grid grid-cols-2 items-center gap-20">
-        <div className="flex flex-col gap-4">
-          <h3>{headline}</h3>
-          {/* <SectionTitle
-            as="h1"
-            className="col-span-5 col-start-1 flex max-w-[531px] items-end leading-[1.1]"
-          >
+    <Section
+      className="-mt-40"
+      crossesOffset="lg:translate-y-[4.75rem]"
+      id="hero"
+    >
+      <Container className="relative" ref={parallaxRef}>
+        <div className="relative z-1 mx-auto mb-[3.875rem] max-w-[62rem] text-center md:mb-20 lg:mb-[6.25rem]">
+          <h1 className="h1 mb-6 text-white">
             {headline}
-          </SectionTitle> */}
 
-          {text && <p>{text}</p>}
+            {headlineHighlight && (
+              <span className="relative ml-4 inline-block">
+                {headlineHighlight || "Highlight"}
+                <Image
+                  src="/images/hero/curve.png"
+                  className="absolute top-full left-0 w-full xl:-mt-2"
+                  width={624}
+                  height={28}
+                  alt="Curve"
+                />
+              </span>
+            )}
+          </h1>
 
-          {button && (
-            <div className="flex items-center gap-4">
-              {button?.map(({ button }, index) => (
-                // <Button variant={button.variant} asChild key={index}>
-                //   <Link
-                //     href={button.url || "/"}
-                //     target={button.newTab ? "_blank" : "_self"}
-                //     rel={button.newTab ? "noopener noreferrer" : undefined}
-                //   >
-                //     {button.label}
-                //   </Link>
-                // </Button>
-                <button key={index}>{button.label}</button>
-              ))}
-            </div>
-          )}
+          <p className="body-1 text-brand-50 mx-auto max-w-3xl">
+            {description}
+          </p>
+
+          <Button as="a" href={button.url} white className="mt-6 lg:mt-8">
+            {button.label}
+          </Button>
         </div>
 
-        {image && (
-          <div className="relative h-[515px] w-full">
+        <div className="relative mx-auto max-w-[23rem] md:max-w-5xl xl:mb-24">
+          <div className="bg-conic-gradient relative z-1 rounded-2xl p-0.5">
+            <div className="bg-brand-900 relative rounded-[1rem]">
+              <div className="bg-brand-200 h-[1.4rem] rounded-t-[0.9rem]" />
+
+              <div className="aspect-[33/40] overflow-hidden rounded-b-[0.9rem] md:aspect-[688/490] lg:aspect-[1024/490]">
+                <Image
+                  src={
+                    image.url ||
+                    "https://dummyimage.com/1034x1512.png/ac6aff/ffffff"
+                  }
+                  className="h-full w-full object-cover md:scale-[1.1]"
+                  width={1034}
+                  height={1512}
+                  alt={image.alt || "Main Image"}
+                />
+
+                {imageText && (
+                  <Generating
+                    text={imageText || "Text goes here"}
+                    className="absolute right-4 bottom-5 left-4 md:right-auto md:bottom-8 md:left-1/2 md:w-[31rem] md:-translate-x-1/2"
+                  />
+                )}
+
+                <ScrollParallax isAbsolutelyPositioned>
+                  <ul className="bg-brand-300/40 absolute bottom-[7.5rem] -left-[5.5rem] hidden rounded-2xl border border-white/10 px-1 py-1 backdrop-blur xl:flex">
+                    {heroIcons.map((icon, index) => (
+                      <li className="p-5" key={index}>
+                        <Image
+                          src={
+                            icon.url ||
+                            "https://dummyimage.com/24x25.png/ac6aff/ffffff"
+                          }
+                          width={24}
+                          height={25}
+                          alt={icon.alt}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollParallax>
+
+                <ScrollParallax isAbsolutelyPositioned>
+                  <Notification
+                    notificationImages={notificationImages}
+                    className="absolute -right-[5.5rem] bottom-[11rem] hidden w-[18rem] text-white xl:flex"
+                    title="Code generation"
+                  />
+                </ScrollParallax>
+              </div>
+            </div>
+
+            <Gradient />
+          </div>
+
+          <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
             <Image
-              src={image.url}
-              alt={image.alt}
-              priority
-              fill
-              className="object-cover"
+              src={"/images/hero/hero-background.jpg"}
+              className="w-full"
+              width={1440}
+              height={1800}
+              alt="hero"
             />
           </div>
+
+          <BackgroundCircles parallaxRef={parallaxRef} />
+        </div>
+
+        {socialProof && (
+          <CompanyLogos
+            text={socialProofText}
+            className="relative z-10 mt-20 hidden lg:block"
+          >
+            {socialProof.map((company) => (
+              <li
+                className="flex h-[8.5rem] flex-1 items-center justify-center"
+                key={company._key}
+              >
+                {company.url !== null ? (
+                  <Link href={company.url || ""}>
+                    <span className="sr-only">{company.title}</span>
+                    <Image
+                      src={
+                        company.iconUrl ||
+                        "https://dummyimage.com/134x28.png/ac6aff/ffffff"
+                      }
+                      width={134}
+                      height={28}
+                      alt={company.alt || "Company Logo"}
+                    />
+                  </Link>
+                ) : (
+                  <>
+                    <span className="sr-only">{company.title}</span>
+                    <Image
+                      src={company.iconUrl}
+                      width={134}
+                      height={28}
+                      alt={company.title}
+                    />
+                  </>
+                )}
+              </li>
+            ))}
+          </CompanyLogos>
         )}
-      </div>
-    </section>
+      </Container>
+
+      <BottomLine />
+    </Section>
   );
 }
+
+export const Gradient = () => {
+  return (
+    <>
+      <div className="bg-brand-700 relative z-1 mx-2.5 h-6 rounded-b-[1.25rem] shadow-xl lg:mx-8 lg:h-6" />
+      <div className="bg-brand-700/70 relative z-1 mx-6 h-6 rounded-b-[1.25rem] shadow-xl lg:mx-20 lg:h-6" />
+    </>
+  );
+};

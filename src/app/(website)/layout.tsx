@@ -40,7 +40,12 @@ export default async function RootLayout({
             ctaButton={ctaButton as LinkItem}
             logo={logo as SimpleImage}
           />
-          <main role="main">{children}</main>
+          <main
+            role="main"
+            className="flex flex-col pt-[4.75rem] lg:pt-[5.25rem]"
+          >
+            {children}
+          </main>
           {/* <Footer /> */}
           <ButtonGradient />
         </div>

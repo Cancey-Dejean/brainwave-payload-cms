@@ -4,10 +4,11 @@ import { disablePageScroll, enablePageScroll } from "@fluejs/noscroll";
 import Link from "next/link";
 import Image from "next/image";
 import NavLink from "./NavLink";
-import { HamburgerMenu } from "./HeaderContent";
+
 import { Button } from "@/components/ui/Button";
 import { MenuSvg } from "@/components/ui/icons";
 import { LinkItem, SimpleImage } from "@/types";
+import { HamburgerMenu } from "@/components/ui/Header/_components/designs";
 
 // export const navigation = [
 //   {

@@ -1,5 +1,6 @@
 import { Block } from "payload";
 import { buttonField } from "@/lib/fields/buttonField";
+import { LabelField, NewTabField, UrlField } from "@/lib/fields/linkFields";
 
 export const Hero: Block = {
   slug: "hero",
@@ -11,23 +12,34 @@ export const Hero: Block = {
       defaultValue: "Section Title",
     },
     {
-      name: "text",
+      name: "headlineHighlight",
+      label: "Headline Highlight",
+      type: "text",
+    },
+    {
+      name: "description",
       label: "Text",
       type: "textarea",
-      defaultValue: "Text goes here...",
+      defaultValue:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, dolore.",
     },
     {
       name: "button",
       label: "Button",
-      type: "array",
-      fields: [buttonField],
-      maxRows: 2,
+      type: "group",
+      fields: [LabelField, UrlField, NewTabField],
     },
     {
       name: "image",
-      label: "Image",
+      label: "Main Image",
       type: "upload",
       relationTo: "media",
+    },
+    {
+      name: "imageText",
+      label: "Image Text",
+      type: "text",
+      defaultValue: "Text goes here...",
     },
   ],
 };

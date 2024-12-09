@@ -110,20 +110,15 @@ export interface Page {
   layout?:
     | {
         headline?: string | null;
-        text?: string | null;
-        button?:
-          | {
-              button: {
-                label: string;
-                url: string;
-                newTab?: boolean | null;
-                variant?: ('default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link') | null;
-                size?: ('default' | 'sm' | 'lg' | 'icon') | null;
-              };
-              id?: string | null;
-            }[]
-          | null;
+        headlineHighlight?: string | null;
+        description?: string | null;
+        button: {
+          label: string;
+          url: string;
+          newTab?: boolean | null;
+        };
         image?: (number | null) | Media;
+        imageText?: string | null;
         id?: string | null;
         blockName?: string | null;
         blockType: 'hero';
@@ -241,22 +236,17 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               headline?: T;
-              text?: T;
+              headlineHighlight?: T;
+              description?: T;
               button?:
                 | T
                 | {
-                    button?:
-                      | T
-                      | {
-                          label?: T;
-                          url?: T;
-                          newTab?: T;
-                          variant?: T;
-                          size?: T;
-                        };
-                    id?: T;
+                    label?: T;
+                    url?: T;
+                    newTab?: T;
                   };
               image?: T;
+              imageText?: T;
               id?: T;
               blockName?: T;
             };

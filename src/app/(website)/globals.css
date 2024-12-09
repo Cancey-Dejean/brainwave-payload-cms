@@ -71,7 +71,6 @@
   --font-*: initial;
   /* --text-*: initial; */
   --color-*: initial;
-  --radius-*: initial;
 
   --color-transparent: transparent;
 
@@ -94,10 +93,19 @@
 
   --color-primary: #ac6aff;
   --color-gray: #6c7275;
+  --color-stroke: #26242c;
 }
 
 @layer base {
   body {
-    @apply font-sora bg-brand-900;
+    @apply font-sora bg-brand-900 overflow-x-hidden;
+  }
+
+  .h1 {
+    @apply text-[2.5rem] leading-[3.25rem] font-semibold md:text-[2.75rem] md:leading-[3.75rem] lg:text-[3.25rem] lg:leading-[4.0625rem] xl:text-[3.75rem] xl:leading-[4.5rem];
+  }
+
+  .body-1 {
+    @apply text-[0.875rem] leading-[1.5rem] md:text-[1rem] md:leading-[1.75rem] lg:text-[1.25rem] lg:leading-8;
   }
 }
