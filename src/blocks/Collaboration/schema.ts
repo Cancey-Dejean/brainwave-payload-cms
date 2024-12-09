@@ -36,10 +36,24 @@ export const Collaboration: Block = {
       required: true,
     },
     {
-      name: "centerImage",
-      label: "Center Icon Image",
+      name: "circleCenterImage",
+      label: "Circle Center Icon Image",
       type: "upload",
       relationTo: "media",
+    },
+    {
+      name: "circleImages",
+      label: "Circle Images",
+      type: "array",
+      maxRows: 8,
+      fields: [
+        {
+          name: "icon",
+          label: "Icon",
+          type: "upload",
+          relationTo: "media",
+        },
+      ],
     },
   ],
 };

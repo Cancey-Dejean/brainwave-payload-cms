@@ -13,6 +13,7 @@ export const queryPageBySlug = cache(async ({ slug }: { slug: string }) => {
         equals: slug,
       },
     },
+    depth: 2,
     select: {
       id: true,
       slug: true,
@@ -25,36 +26,36 @@ export const queryPageBySlug = cache(async ({ slug }: { slug: string }) => {
   return pages.docs?.[0] || null;
 });
 
-export const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
-  const payload = await getPayload({ config });
+// export const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
+//   const payload = await getPayload({ config });
 
-  const posts = await payload.find({
-    collection: "posts",
-    limit: 1,
-    where: {
-      slug: {
-        equals: slug,
-      },
-    },
-    select: {
-      id: true,
-      createdBy: true,
-      _status: true,
-      layout: true,
-      createdAt: true,
-      updatedAt: true,
-      body: true,
-      slug: true,
-      meta: true,
-      title: true,
-      featuredImage: true,
-    },
-    populate: {
-      users: {
-        name: true,
-      },
-    },
-  });
+//   const posts = await payload.find({
+//     collection: "posts",
+//     limit: 1,
+//     where: {
+//       slug: {
+//         equals: slug,
+//       },
+//     },
+//     select: {
+//       id: true,
+//       createdBy: true,
+//       _status: true,
+//       layout: true,
+//       createdAt: true,
+//       updatedAt: true,
+//       body: true,
+//       slug: true,
+//       meta: true,
+//       title: true,
+//       featuredImage: true,
+//     },
+//     populate: {
+//       users: {
+//         name: true,
+//       },
+//     },
+//   });
 
-  return posts.docs?.[0] || null;
-});
+//   return posts.docs?.[0] || null;
+// });

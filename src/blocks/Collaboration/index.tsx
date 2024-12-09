@@ -8,7 +8,8 @@ import {
 } from "@/blocks/Collaboration/_components/designs";
 import RichText from "@/blocks/RichText";
 import Container from "@/components/Container";
-import { LinkItem } from "@/types";
+import { LinkItem, SimpleImage } from "@/types";
+import { cn } from "@/lib/utils";
 
 type CheckItem = {
   id?: string;
@@ -25,19 +26,19 @@ export type IconItem = {
 };
 
 export default function Collaboration({
-  topDescription,
   headline = "Section Title",
+  topDescription,
   button,
-  centerImage,
+  circleCenterImage,
   perks,
-  collabApps,
+  circleImages,
 }: {
   headline?: string;
   topDescription: string;
   button: LinkItem;
-  centerImage?: string;
   perks: CheckItem[];
-  collabApps: IconItem[];
+  circleCenterImage?: SimpleImage;
+  circleImages?: SimpleImage[];
 }) {
   return (
     <Section>
@@ -69,38 +70,50 @@ export default function Collaboration({
               <div className="conic-gradient m-auto aspect-square w-[6rem] rounded-full bg-conic/[background-image: p-[0.2rem]">
                 <div className="bg-brand-900 flex h-full w-full items-center justify-center rounded-full">
                   <Image
-                    src={centerImage || "/images/brainwave-symbol.svg"}
+                    src={
+                      circleCenterImage?.url || "/images/brainwave-symbol.svg"
+                    }
                     width={48}
                     height={48}
-                    alt="brainwave"
+                    alt={circleCenterImage?.alt || "brainwave"}
                   />
                 </div>
               </div>
             </div>
 
-            {collabApps && (
+            {circleImages && (
               <ul>
-                {collabApps.map((app, index) => (
-                  <li
-                    key={index}
-                    className={`absolute top-0 left-1/2 -ml-[1.6rem] h-1/2 origin-bottom rotate-${
-                      index * 45
-                    }`}
-                  >
-                    <div
-                      className={`bg-brand-800 relative -top-[1.6rem] flex h-[3.2rem] w-[3.2rem] rounded-xl border border-white/15 -rotate-${
-                        index * 45
-                      }`}
-                    >
-                      <Image
-                        className="m-auto"
-                        width={app.width || 34}
-                        height={app.height || 34}
-                        alt={app.alt || "App Icon"}
-                        src={app.icon || "/images/collaboration/figma.png"}
-                      />
-                    </div>
-                  </li>
+                {circleImages.map((icon, index) => (
+                  <div key={index}>
+                    {icon.alt}
+                    {/* <Image
+                      className="m-auto max-w-[24px]"
+                      width={image.width || 34}
+                      height={image.height || 34}
+                      alt={image.alt || "App Icon"}
+                      src={image.url}
+                    /> */}
+                  </div>
+                  // <li
+                  //   key={index}
+                  //   className={`absolute top-0 left-1/2 -ml-[1.6rem] h-1/2 origin-bottom !rotate-x-${
+                  //     index * 45
+                  //   }`}
+                  // >
+                  //   <div
+                  //     className={`bg-brand-800 relative -top-[1.6rem] flex h-[3.2rem] w-[3.2rem] rounded-xl border border-white/15 rotate-x-${
+                  //       index * 45
+                  //     }`}
+                  //   >
+                  //     <Image
+                  //       className="m-auto max-w-[24px]"
+                  //       width={image.width || 34}
+                  //       height={image.height || 34}
+                  //       alt={image.alt || "App Icon"}
+                  //       src={image.url || "/images/collaboration/figma.png"}
+                  //     />
+                  //   </div>
+                  // </li>
                 ))}
               </ul>
             )}

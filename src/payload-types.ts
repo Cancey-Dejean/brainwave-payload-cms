@@ -209,7 +209,13 @@ export interface Page {
               };
               [k: string]: unknown;
             };
-            centerImage?: (number | null) | Media;
+            circleCenterImage?: (number | null) | Media;
+            circleImages?:
+              | {
+                  icon?: (number | null) | Media;
+                  id?: string | null;
+                }[]
+              | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'collaboration';
@@ -392,7 +398,13 @@ export interface PagesSelect<T extends boolean = true> {
                     newTab?: T;
                   };
               topDescription?: T;
-              centerImage?: T;
+              circleCenterImage?: T;
+              circleImages?:
+                | T
+                | {
+                    icon?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };

@@ -1,5 +1,3 @@
-import { ButtonProps } from "@/components/ui/Button";
-
 export type SimpleImage = {
   url: string;
   alt?: string;
@@ -13,11 +11,3 @@ export type LinkItem = {
   url?: string;
   newTab?: boolean;
 };
-
-// export type Button = LinkItem & {
-//   variant: ButtonProps["variant"];
-// };
-
-// export type ButtonLink = {
-//   button: Button;
-// };
