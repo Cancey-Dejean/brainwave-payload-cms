@@ -66,10 +66,10 @@
 } */
 
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --font-*: initial;
-  /* --text-*: initial; */
   --color-*: initial;
 
   --color-transparent: transparent;
@@ -78,7 +78,7 @@
   --font-code: "Source Code Pro", monospace;
   --font-grotesk: "Space Grotesk", sans-serif;
 
-  --color-white: #fff;
+  --color-white: #ffffff;
   --color-brand-50: #cac6dd;
   --color-brand-100: #ada8c3;
   --color-brand-150: #757185;
@@ -95,11 +95,13 @@
   --color-stroke: #26242c;
 
   --tracking-tagline: 0.15em;
-
-  --radial-gradient: radial-gradient(var(--tw-gradient-stops));
 }
 
 @layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply font-sora bg-brand-900 overflow-x-hidden;
   }
@@ -112,6 +114,10 @@
 
   .h2 {
     @apply text-[1.75rem] leading-[2.5rem] md:text-[2rem] md:leading-[2.5rem] lg:text-[2.5rem] lg:leading-[3.5rem] xl:text-[3rem] xl:leading-tight;
+  }
+
+  .h5 {
+    @apply text-2xl leading-normal;
   }
 
   .body-1 {

@@ -23,17 +23,7 @@ export default function Features({
         {cards && (
           <div className="mb-10 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             {cards.map((card) => (
-              <GradientCard
-                key={card.id}
-                title={card.title}
-                btnUrl={card.btnUrl}
-                description={card.description}
-                // icon={card.icon}
-                variant={card.variant}
-                gradientLight={card.gradientLight}
-                // backgroundImage={card.backgroundImage}
-                btnText={card.btnText}
-              />
+              <GradientCard key={card.id} {...card} />
             ))}
           </div>
         )}
