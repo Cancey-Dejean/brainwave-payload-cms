@@ -1,5 +1,10 @@
 export const VERSION_INTERVAL = {
-  drafts: true,
+  maxPerDoc: 5,
+  drafts: {
+    autosave: {
+      interval: 1000,
+    },
+  },
 };
 
 export const BUTTON_VARIANTS = [

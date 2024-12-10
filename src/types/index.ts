@@ -13,8 +13,15 @@ export type LinkItem = {
 };
 
 export type CheckTextRowProps = {
-  id?: string;
-  text?: string;
+  title?: string;
   description?: React.ReactNode;
   showBorder?: boolean;
+  className?: string;
+};
+
+export type ServiceCard = {
+  image?: SimpleImage;
+  title?: string;
+  description?: string;
+  chatMessage?: string;
 };

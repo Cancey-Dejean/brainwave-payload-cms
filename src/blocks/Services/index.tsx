@@ -1,4 +1,4 @@
-import { CheckTextRowProps } from "@/types";
+import { CheckTextRowProps, SimpleImage } from "@/types";
 import ServiceCardLarge, {
   ServiceCardLargeProps,
 } from "./_components/ServiceCardLarge";
@@ -13,10 +13,9 @@ import Container from "@/components/Container";
 export default function Services({
   headline,
   description,
-  featuredCardTitle,
-  featuredCardDesc,
-  featuredCardItemList,
-  featuredCardImage,
+  featuredCard,
+  cardOne,
+  cardTwo,
   serviceCard1Image,
   serviceCard1Title,
   serviceCard1Desc,
@@ -28,11 +27,20 @@ export default function Services({
 }: {
   headline: string;
   description?: string;
+  featuredCard: ServiceCardLargeProps;
+  cardOne: {
+    cardOneTitle: string;
+    cardOneDescription: string;
+    cardOneImage: SimpleImage;
+    chatMessage?: string;
+  };
+  cardTwo: {
+    cardTwoTitle?: string;
+    cardTwoDescription?: string;
+    cardTwoImage?: SimpleImage;
+    chatMessage?: string;
+  };
 
-  featuredCardImage?: string;
-  featuredCardTitle?: string;
-  featuredCardDesc?: string;
-  featuredCardItemList?: CheckTextRowProps[];
   serviceCard1Image?: string;
   serviceCard1Title?: string;
   serviceCard1Desc?: string;
@@ -41,45 +49,42 @@ export default function Services({
   serviceCard2Title?: string;
   serviceCard2Desc?: string;
   serviceCard2ChatMessage?: string;
-} & ServiceCardLargeProps) {
+}) {
+  console.log(cardOne);
+
   return (
     <Section id="how-to-use">
       <Container className="text-white">
         <Heading title={headline} text={description} />
 
         <div className="relative">
-          {/* ServiceCardLarge */}
-          {featuredCardItemList && (
-            <>
-              <ServiceCardLarge
-                title={featuredCardTitle || "Featured"}
-                description={featuredCardDesc || "Hello"}
-                mainImage={featuredCardImage || ""}
-              >
-                {featuredCardItemList.map((item, index) => (
-                  <CheckTextRow key={index} {...item} />
-                ))}
-              </ServiceCardLarge>
-            </>
+          {featuredCard && (
+            <ServiceCardLarge
+              title={featuredCard.title || "Featured"}
+              description={featuredCard.description || "Hello"}
+              image={featuredCard.image}
+              bottomText={featuredCard.bottomText}
+            >
+              {featuredCard?.itemList?.map((item, index) => (
+                <CheckTextRow className="px-0" key={index} {...item} />
+              ))}
+            </ServiceCardLarge>
           )}
 
           <div className="relative z-1 grid gap-5 lg:grid-cols-2">
-            {/* ServiceCard1 */}
             <ServiceCard1
-              title={serviceCard1Title}
-              chatMessage={serviceCard1ChatMessage}
-              description={serviceCard1Desc}
-              mainImage={serviceCard1Image}
-              mainImageAlt="Main Image"
+              title={cardOne.cardOneTitle}
+              description={cardOne.cardOneDescription}
+              image={cardOne.cardOneImage}
+              chatMessage={cardOne.chatMessage}
             />
 
             {/* ServiceCard2 */}
             <ServiceCard2
-              mainImage={serviceCard2Image}
-              mainImageAlt="Hello"
-              title={serviceCard2Title}
-              description={serviceCard2Desc}
-              videoChatMessage={serviceCard2ChatMessage}
+              title={cardTwo.cardTwoTitle}
+              description={cardTwo.cardTwoDescription}
+              image={cardTwo.cardTwoImage}
+              chatMessage={cardTwo.chatMessage}
             />
           </div>
 

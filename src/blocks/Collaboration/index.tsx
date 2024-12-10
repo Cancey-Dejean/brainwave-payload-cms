@@ -8,22 +8,8 @@ import {
 } from "@/blocks/Collaboration/_components/designs";
 import RichText from "@/blocks/RichText";
 import Container from "@/components/Container";
-import { LinkItem, SimpleImage } from "@/types";
+import { CheckTextRowProps, LinkItem, SimpleImage } from "@/types";
 import { cn } from "@/lib/utils";
-
-type CheckItem = {
-  id?: string;
-  text?: string;
-  description?: string;
-};
-
-export type IconItem = {
-  id?: string;
-  icon?: string | null;
-  width?: number;
-  height?: number;
-  alt?: string;
-};
 
 export default function Collaboration({
   headline = "Section Title",
@@ -36,7 +22,7 @@ export default function Collaboration({
   headline?: string;
   topDescription: string;
   button: LinkItem;
-  perks: CheckItem[];
+  perks: CheckTextRowProps[];
   circleCenterImage?: SimpleImage;
   circleImages?: {
     icon: SimpleImage;
@@ -49,13 +35,13 @@ export default function Collaboration({
   return (
     <Section>
       <Container className="md:flex">
-        <div className="text-white md:max-w-[25rem]">
-          <h2 className="h2 mb-4 md:mb-8">{headline}</h2>
+        <div className="md:max-w-[25rem]">
+          <h2 className="h2 mb-4 text-white md:mb-8">{headline}</h2>
 
           {perks && (
             <ul className="mb-10 md:mb-14 md:max-w-[22rem]">
-              {perks.map((item) => (
-                <CheckTextRow {...item} key={item.id} />
+              {perks.map((item, index) => (
+                <CheckTextRow {...item} key={index} />
               ))}
             </ul>
           )}
@@ -65,11 +51,13 @@ export default function Collaboration({
           </Button>
         </div>
 
-        <div className="mt-10 lg:ml-auto xl:w-[38rem]">
-          <RichText
-            content={topDescription as any}
-            className="body-2 text-brand-150 mb-8 md:mb-16 lg:mx-auto lg:mb-32 lg:w-[22rem]"
-          />
+        <div className="mt-10 lg:ml-auto xl:max-w-[38rem]">
+          <div className="text-brand-150">
+            <RichText
+              content={topDescription as any}
+              className="body-2 mb-8 md:mb-16 lg:mx-auto lg:mb-32 lg:w-[22rem]"
+            />
+          </div>
 
           <div className="scale:75 border-brand-600 relative left-1/2 flex aspect-square w-[22rem] -translate-x-1/2 rounded-full border md:scale-100">
             <div className="border-brand-600 m-auto flex aspect-square w-60 rounded-full border">

@@ -29,15 +29,6 @@
   --color-stroke: #26242c;
 
   --tracking-tagline: 0.15em;
-
-  --conic-gradient: background-image: conic-gradient(
-      from 225deg,
-      #ffc876,
-      #79fff7,
-      #9f53ff,
-      #ff98e2,
-      #ffc876
-    );
 }
 
 @layer base {
@@ -51,12 +42,23 @@
 }
 
 @layer utilities {
+  .prose {
+    @apply text-inherit;
+    strong {
+      @apply !text-current;
+    }
+  }
+
   .h1 {
     @apply text-[2.5rem] leading-[3.25rem] font-semibold md:text-[2.75rem] md:leading-[3.75rem] lg:text-[3.25rem] lg:leading-[4.0625rem] xl:text-[3.75rem] xl:leading-[4.5rem];
   }
 
   .h2 {
     @apply text-[1.75rem] leading-[2.5rem] md:text-[2rem] md:leading-[2.5rem] lg:text-[2.5rem] lg:leading-[3.5rem] xl:text-[3rem] xl:leading-tight;
+  }
+
+  .h4 {
+    @apply text-[2rem] leading-normal;
   }
 
   .h5 {

@@ -29,11 +29,13 @@ export const Services: Block = {
           name: "title",
           label: "Title",
           type: "text",
+          defaultValue: "Title",
         },
         {
           name: "description",
           label: "Description",
           type: "textarea",
+          defaultValue: "Description goes here...",
         },
         {
           name: "itemList",
@@ -41,11 +43,23 @@ export const Services: Block = {
           type: "array",
           fields: [
             {
-              name: "item",
-              label: "Item",
+              name: "title",
+              label: "Title",
               type: "text",
+              defaultValue: "Title",
+            },
+            {
+              name: "showBorder",
+              label: "Show Border",
+              type: "checkbox",
             },
           ],
+        },
+        {
+          name: "bottomText",
+          label: "Bottom Text",
+          type: "text",
+          defaultValue: "Text goes here...",
         },
       ],
     },
@@ -54,7 +68,8 @@ export const Services: Block = {
       type: "tabs",
       tabs: [
         {
-          label: "Service Card 1",
+          name: "cardOne",
+          label: "Card 1",
           description: "This will appear within the tab above the fields.",
           fields: [
             {
@@ -67,34 +82,37 @@ export const Services: Block = {
               name: "cardOneTitle",
               label: "Title",
               type: "text",
+              defaultValue: "Title",
             },
             {
               name: "cardOneDescription",
               label: "Description",
               type: "textarea",
+              defaultValue: "Description goes here...",
             },
             {
               name: "chatMessage",
               label: "Chat Message",
               type: "textarea",
+              defaultValue: "Chat Message",
             },
           ],
         },
-
         {
-          name: "tabTwo",
-          label: "Service Card 2",
-          interfaceName: "TabTwo",
+          name: "cardTwo",
+          label: "Card 2",
           fields: [
             {
               name: "cardTwoTitle",
               label: "Title",
               type: "text",
+              defaultValue: "Title",
             },
             {
               name: "cardTwoDescription",
               label: "Description",
               type: "textarea",
+              defaultValue: "Description goes here...",
             },
             {
               name: "cardTwoImage",
@@ -106,6 +124,7 @@ export const Services: Block = {
               name: "chatMessage",
               label: "Chat Message",
               type: "textarea",
+              defaultValue: "Chat Message",
             },
           ],
         },

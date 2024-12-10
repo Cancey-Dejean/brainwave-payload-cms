@@ -12,7 +12,7 @@ const RichText: React.FC<Props> = ({ content, className }) => {
   }
 
   return (
-    <div className={cn("prose max-w-full", className)}>
+    <div className={cn("prose max-w-full text-inherit", className)}>
       {serializeLexical({ nodes: content.root.children })}
     </div>
   );

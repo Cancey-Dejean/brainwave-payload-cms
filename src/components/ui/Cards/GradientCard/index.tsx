@@ -56,7 +56,7 @@ export default function GradientCard({
           />
         )}
 
-        <div className="mt-auto flex items-center gap-6">
+        <div className="mt-auto flex items-center justify-between gap-6">
           <Image
             src={icon?.url || "https://dummyimage.com/48x48.png/ac6aff/ffffff"}
             className="rounded-lg"

@@ -170,7 +170,7 @@ export interface Page {
             headline?: string | null;
             perks?:
               | {
-                  text?: string | null;
+                  title?: string | null;
                   description?: {
                     root: {
                       type: string;
@@ -243,16 +243,25 @@ export interface Page {
               description?: string | null;
               itemList?:
                 | {
-                    item?: string | null;
+                    title?: string | null;
+                    showBorder?: boolean | null;
                     id?: string | null;
                   }[]
                 | null;
+              bottomText?: string | null;
             };
-            cardOneImage?: (number | null) | Media;
-            cardOneTitle?: string | null;
-            cardOneDescription?: string | null;
-            chatMessage?: string | null;
-            tabTwo?: TabTwo;
+            cardOne?: {
+              cardOneImage?: (number | null) | Media;
+              cardOneTitle?: string | null;
+              cardOneDescription?: string | null;
+              chatMessage?: string | null;
+            };
+            cardTwo?: {
+              cardTwoTitle?: string | null;
+              cardTwoDescription?: string | null;
+              cardTwoImage?: (number | null) | Media;
+              chatMessage?: string | null;
+            };
             id?: string | null;
             blockName?: string | null;
             blockType: 'services';
@@ -262,16 +271,6 @@ export interface Page {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "TabTwo".
- */
-export interface TabTwo {
-  cardTwoTitle?: string | null;
-  cardTwoDescription?: string | null;
-  cardTwoImage?: (number | null) | Media;
-  chatMessage?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -433,7 +432,7 @@ export interface PagesSelect<T extends boolean = true> {
               perks?:
                 | T
                 | {
-                    text?: T;
+                    title?: T;
                     description?: T;
                     id?: T;
                   };
@@ -469,15 +468,21 @@ export interface PagesSelect<T extends boolean = true> {
                     itemList?:
                       | T
                       | {
-                          item?: T;
+                          title?: T;
+                          showBorder?: T;
                           id?: T;
                         };
+                    bottomText?: T;
                   };
-              cardOneImage?: T;
-              cardOneTitle?: T;
-              cardOneDescription?: T;
-              chatMessage?: T;
-              tabTwo?:
+              cardOne?:
+                | T
+                | {
+                    cardOneImage?: T;
+                    cardOneTitle?: T;
+                    cardOneDescription?: T;
+                    chatMessage?: T;
+                  };
+              cardTwo?:
                 | T
                 | {
                     cardTwoTitle?: T;

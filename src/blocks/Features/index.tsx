@@ -23,7 +23,11 @@ export default function Features({
         {cards && (
           <div className="mb-10 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             {cards.map((card) => (
-              <GradientCard key={card.id} {...card} />
+              <GradientCard
+                className="text-brand-100"
+                key={card.id}
+                {...card}
+              />
             ))}
           </div>
         )}

@@ -16,8 +16,8 @@ export const Collaboration: Block = {
       type: "array",
       fields: [
         {
-          name: "text",
-          label: "Text",
+          name: "title",
+          label: "Title",
           type: "text",
         },
         {
