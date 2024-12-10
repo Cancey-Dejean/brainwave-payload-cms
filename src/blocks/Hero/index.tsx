@@ -7,7 +7,6 @@
 import { Button } from "@/components/ui/Button";
 import Section from "@/components/Section";
 import Image from "next/image";
-import Link from "next/link";
 import { useRef } from "react";
 import Generating from "@/components/Generating";
 import { ScrollParallax } from "react-just-parallax";
@@ -21,40 +20,7 @@ import {
   BottomLine,
 } from "@/blocks/Hero/_components/designs";
 import { LinkItem, SimpleImage } from "@/types";
-
-export const heroIcons = [
-  {
-    url: "/images/home-smile.svg",
-    alt: "home smile",
-  },
-  {
-    url: "/images/file-02.svg",
-    alt: "file02",
-  },
-  {
-    url: "/images/search-md.svg",
-    alt: "searchMd",
-  },
-  {
-    url: "/images/plus-square.svg",
-    alt: "plusSquare",
-  },
-];
-
-export const notificationImages = [
-  {
-    url: "/images/notification/image-4.png",
-    alt: "notification image",
-  },
-  {
-    url: "/images/notification/image-3.png",
-    alt: "notification image",
-  },
-  {
-    url: "/images/notification/image-2.png",
-    alt: "notification image",
-  },
-];
+import { heroIcons, notificationImages } from "@/constants";
 
 export default function Hero({
   headline = "Headline",
@@ -67,7 +33,7 @@ export default function Hero({
 }: {
   headline: string;
   headlineHighlight?: string;
-  image: SimpleImage;
+  image?: SimpleImage;
   imageText?: string;
   description?: string;
   button: LinkItem;
@@ -85,7 +51,7 @@ export default function Hero({
   return (
     <Section
       className="-mt-40"
-      crossesOffset="lg:translate-y-[4.75rem]"
+      crossesOffset="lg:translate-y-[4.75rem] overflow-x-hidden"
       id="hero"
     >
       <Container className="relative" ref={parallaxRef}>
@@ -124,13 +90,13 @@ export default function Hero({
               <div className="aspect-[33/40] overflow-hidden rounded-b-[0.9rem] md:aspect-[688/490] lg:aspect-[1024/490]">
                 <Image
                   src={
-                    image.url ||
+                    image?.url ||
                     "https://dummyimage.com/1034x1512.png/ac6aff/ffffff"
                   }
                   className="h-full w-full object-cover md:scale-[1.1]"
                   width={1034}
                   height={1512}
-                  alt={image.alt || "Main Image"}
+                  alt={image?.alt || "Main Image"}
                 />
 
                 {imageText && (
@@ -171,7 +137,7 @@ export default function Hero({
             <Gradient />
           </div>
 
-          <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
+          <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-full lg:-top-[104%]">
             <Image
               src={"/images/hero/hero-background.jpg"}
               className="w-full"
@@ -184,7 +150,7 @@ export default function Hero({
           <BackgroundCircles parallaxRef={parallaxRef} />
         </div>
 
-        {socialProof && (
+        {socialProof && socialProof.logos.length > 0 && (
           <CompanyLogos
             text={socialProof.title}
             className="relative z-10 mt-20 hidden text-white lg:block"
@@ -197,7 +163,10 @@ export default function Hero({
                 <>
                   <span className="sr-only">{logo.alt}</span>
                   <Image
-                    src={logo.url || ""}
+                    src={
+                      logo.url ||
+                      "https://dummyimage.com/134x28.png/ac6aff/ffffff"
+                    }
                     width={134}
                     height={28}
                     alt={logo.alt || "Company Logo"}

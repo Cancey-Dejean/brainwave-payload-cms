@@ -38,16 +38,22 @@ export default function Collaboration({
   button: LinkItem;
   perks: CheckItem[];
   circleCenterImage?: SimpleImage;
-  circleImages?: SimpleImage[];
+  circleImages?: {
+    icon: SimpleImage;
+  }[];
 }) {
+  const iconContainerStyles =
+    "absolute top-0 left-1/2 -ml-[1.6rem] h-1/2 origin-bottom";
+  const iconInnerStyles =
+    "bg-brand-800 relative -top-[1.6rem] flex size-[3.2rem] rounded-xl border border-white/15 [&>img]:m-auto [&>img]:h-8 [&>img]:object-contain";
   return (
     <Section>
-      <Container className="lg:flex">
-        <div className="max-w-[25rem] text-white">
+      <Container className="md:flex">
+        <div className="text-white md:max-w-[25rem]">
           <h2 className="h2 mb-4 md:mb-8">{headline}</h2>
 
           {perks && (
-            <ul className="mb-10 max-w-[22rem] md:mb-14">
+            <ul className="mb-10 md:mb-14 md:max-w-[22rem]">
               {perks.map((item) => (
                 <CheckTextRow {...item} key={item.id} />
               ))}
@@ -59,7 +65,7 @@ export default function Collaboration({
           </Button>
         </div>
 
-        <div className="mt-4 lg:ml-auto xl:w-[38rem]">
+        <div className="mt-10 lg:ml-auto xl:w-[38rem]">
           <RichText
             content={topDescription as any}
             className="body-2 text-brand-150 mb-8 md:mb-16 lg:mx-auto lg:mb-32 lg:w-[22rem]"
@@ -81,42 +87,164 @@ export default function Collaboration({
               </div>
             </div>
 
-            {circleImages && (
+            <ul>
+              <li className={cn(iconContainerStyles, "rotate-0")}>
+                <div className={cn(iconInnerStyles, "-rotate-0")}>
+                  <Image
+                    width={34}
+                    height={34}
+                    alt={circleImages?.[0]?.icon?.alt || "App Icon"}
+                    src={
+                      circleImages?.[0]?.icon?.url ||
+                      "/images/collaboration/figma.png"
+                    }
+                  />
+                </div>
+              </li>
+
+              <li className={cn(iconContainerStyles, "rotate-45")}>
+                <div className={cn(iconInnerStyles, "-rotate-45")}>
+                  <Image
+                    width={34}
+                    height={34}
+                    alt={circleImages?.[1]?.icon?.alt || "App Icon"}
+                    src={
+                      circleImages?.[1]?.icon?.url ||
+                      "/images/collaboration/figma.png"
+                    }
+                  />
+                </div>
+              </li>
+
+              <li className={cn(iconContainerStyles, "rotate-90")}>
+                <div className={cn(iconInnerStyles, "-rotate-90")}>
+                  <Image
+                    width={34}
+                    height={34}
+                    alt={circleImages?.[2]?.icon?.alt || "App Icon"}
+                    src={
+                      circleImages?.[2]?.icon?.url ||
+                      "/images/collaboration/figma.png"
+                    }
+                  />
+                </div>
+              </li>
+
+              <li className={cn(iconContainerStyles, "rotate-135")}>
+                <div className={cn(iconInnerStyles, "-rotate-135")}>
+                  <Image
+                    width={34}
+                    height={34}
+                    alt={circleImages?.[3]?.icon?.alt || "App Icon"}
+                    src={
+                      circleImages?.[3]?.icon?.url ||
+                      "/images/collaboration/figma.png"
+                    }
+                  />
+                </div>
+              </li>
+
+              <li className={cn(iconContainerStyles, "rotate-180")}>
+                <div className={cn(iconInnerStyles, "-rotate-180")}>
+                  <Image
+                    width={34}
+                    height={34}
+                    alt={circleImages?.[4]?.icon?.alt || "App Icon"}
+                    src={
+                      circleImages?.[4]?.icon?.url ||
+                      "/images/collaboration/figma.png"
+                    }
+                  />
+                </div>
+              </li>
+
+              <li className={cn(iconContainerStyles, "rotate-225")}>
+                <div className={cn(iconInnerStyles, "-rotate-225")}>
+                  <Image
+                    width={34}
+                    height={34}
+                    alt={circleImages?.[5]?.icon?.alt || "App Icon"}
+                    src={
+                      circleImages?.[5]?.icon?.url ||
+                      "/images/collaboration/figma.png"
+                    }
+                  />
+                </div>
+              </li>
+
+              <li className={cn(iconContainerStyles, "rotate-270")}>
+                <div className={cn(iconInnerStyles, "-rotate-270")}>
+                  <Image
+                    width={34}
+                    height={34}
+                    alt={circleImages?.[6]?.icon?.alt || "App Icon"}
+                    src={
+                      circleImages?.[6]?.icon?.url ||
+                      "/images/collaboration/figma.png"
+                    }
+                  />
+                </div>
+              </li>
+
+              <li className={cn(iconContainerStyles, "rotate-315")}>
+                <div className={cn(iconInnerStyles, "-rotate-315")}>
+                  <Image
+                    width={34}
+                    height={34}
+                    alt={circleImages?.[7]?.icon?.alt || "App Icon"}
+                    src={
+                      circleImages?.[7]?.icon?.url ||
+                      "/images/collaboration/figma.png"
+                    }
+                  />
+                </div>
+              </li>
+            </ul>
+
+            {/* {circleImages && (
               <ul>
-                {circleImages.map((icon, index) => (
-                  <div key={index}>
-                    {icon.alt}
-                    {/* <Image
-                      className="m-auto max-w-[24px]"
-                      width={image.width || 34}
-                      height={image.height || 34}
-                      alt={image.alt || "App Icon"}
-                      src={image.url}
-                    /> */}
-                  </div>
-                  // <li
-                  //   key={index}
-                  //   className={`absolute top-0 left-1/2 -ml-[1.6rem] h-1/2 origin-bottom !rotate-x-${
-                  //     index * 45
-                  //   }`}
-                  // >
-                  //   <div
-                  //     className={`bg-brand-800 relative -top-[1.6rem] flex h-[3.2rem] w-[3.2rem] rounded-xl border border-white/15 rotate-x-${
-                  //       index * 45
-                  //     }`}
-                  //   >
-                  //     <Image
-                  //       className="m-auto max-w-[24px]"
-                  //       width={image.width || 34}
-                  //       height={image.height || 34}
-                  //       alt={image.alt || "App Icon"}
-                  //       src={image.url || "/images/collaboration/figma.png"}
-                  //     />
-                  //   </div>
-                  // </li>
+                {circleImages.map((image, index) => (
+                  <li
+                    key={index}
+                    className={cn(
+                      "absolute -ml-[1.6rem] h-1/2 origin-bottom",
+                      index === 0 && "top-0 left-1/2 rotate-x-0",
+                      index === 1 && "top-0 left-1/2 rotate-x-[45deg]",
+                      index === 2 && "top-0 left-1/2 rotate-x-[90deg]",
+                      index === 3 && "top-0 left-1/2 rotate-x-[135deg]",
+                      index === 4 && "top-0 left-1/2 rotate-x-[180deg]",
+                      index === 5 && "top-0 left-1/2 rotate-x-[225deg]",
+                      index === 6 && "top-0 left-1/2 rotate-x-[270deg]",
+                      index === 7 && "top-0 left-1/2 rotate-x-[315deg]",
+                    )}
+                  >
+                    <div
+                      className={cn(
+                        "bg-brand-800 relative -top-[1.6rem] flex h-[3.2rem] w-[3.2rem] rounded-xl border border-white/15",
+                        index === 0 && "-rotate-x-0",
+                        index === 1 && "-rotate-x-[45deg]",
+                        index === 2 && "-rotate-x-[90deg]",
+                        index === 3 && "-rotate-x-[135deg]",
+                        index === 4 && "-rotate-x-[180deg]",
+                        index === 5 && "-rotate-x-[225deg]",
+                        index === 6 && "-rotate-x-[270deg]",
+                        index === 7 && "-rotate-x-[315deg]",
+                      )}
+                    >
+                      <Image
+                        className="m-auto max-w-[24px]"
+                        width={image.icon.width || 34}
+                        height={image.icon.height || 34}
+                        alt={image.icon.alt || "App Icon"}
+                        src={
+                          image.icon.url || "/images/collaboration/figma.png"
+                        }
+                      />
+                    </div>
+                  </li>
                 ))}
               </ul>
-            )}
+            )} */}
 
             <LeftCurve />
             <RightCurve />

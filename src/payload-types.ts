@@ -220,11 +220,58 @@ export interface Page {
             blockName?: string | null;
             blockType: 'collaboration';
           }
+        | {
+            headline?: string | null;
+            description?: {
+              root: {
+                type: string;
+                children: {
+                  type: string;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
+            featuredCard?: {
+              image?: (number | null) | Media;
+              title?: string | null;
+              description?: string | null;
+              itemList?:
+                | {
+                    item?: string | null;
+                    id?: string | null;
+                  }[]
+                | null;
+            };
+            cardOneImage?: (number | null) | Media;
+            cardOneTitle?: string | null;
+            cardOneDescription?: string | null;
+            chatMessage?: string | null;
+            tabTwo?: TabTwo;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'services';
+          }
       )[]
     | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TabTwo".
+ */
+export interface TabTwo {
+  cardTwoTitle?: string | null;
+  cardTwoDescription?: string | null;
+  cardTwoImage?: (number | null) | Media;
+  chatMessage?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -404,6 +451,39 @@ export interface PagesSelect<T extends boolean = true> {
                 | {
                     icon?: T;
                     id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        services?:
+          | T
+          | {
+              headline?: T;
+              description?: T;
+              featuredCard?:
+                | T
+                | {
+                    image?: T;
+                    title?: T;
+                    description?: T;
+                    itemList?:
+                      | T
+                      | {
+                          item?: T;
+                          id?: T;
+                        };
+                  };
+              cardOneImage?: T;
+              cardOneTitle?: T;
+              cardOneDescription?: T;
+              chatMessage?: T;
+              tabTwo?:
+                | T
+                | {
+                    cardTwoTitle?: T;
+                    cardTwoDescription?: T;
+                    cardTwoImage?: T;
+                    chatMessage?: T;
                   };
               id?: T;
               blockName?: T;

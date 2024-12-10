@@ -91,7 +91,7 @@ export default function GradientCard({
           className="bg-brand-900 absolute inset-0.5"
           style={{ clipPath: "url(#benefits)" }}
         >
-          <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-10">
+          <div className="absolute inset-0 opacity-5 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-10">
             <Image
               src={
                 backgroundImage?.url ||

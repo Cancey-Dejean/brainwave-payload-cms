@@ -1,9 +1,10 @@
 import TagLine from "@/components/Tagline";
+import RichText from "@/blocks/RichText";
 import { cn } from "@/lib/utils";
 
 export default function Heading({
   className,
-  title,
+  title = "Section Title",
   text,
   tag,
 }: {
@@ -20,8 +21,15 @@ export default function Heading({
       )}
     >
       {tag && <TagLine className="mb-4 md:justify-center">{tag}</TagLine>}
+
       {title && <h2 className="h2">{title}</h2>}
-      {text && <p className="body-2 text-brand-150 mt-4">{text}</p>}
+
+      {text && (
+        <RichText
+          content={text as any}
+          className="body-2 text-brand-150 mt-4"
+        />
+      )}
     </div>
   );
 }

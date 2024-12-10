@@ -1,6 +1,7 @@
 import { Collaboration } from "@/blocks/Collaboration/schema";
 import { Features } from "@/blocks/Features/schema";
 import { Hero } from "@/blocks/Hero/schema";
+import { Services } from "@/blocks/Services/schema";
 import { VERSION_INTERVAL } from "@/constants";
 import { slugGeneratorField } from "@/lib/fields/slugGeneratorField";
 import { getServerSideURL } from "@/utils/getURL";
@@ -69,7 +70,7 @@ export const Pages: CollectionConfig = {
       name: "layout",
       label: "Layout",
       type: "blocks",
-      blocks: [Hero, Features, Collaboration],
+      blocks: [Hero, Features, Collaboration, Services],
     },
   ],
 };

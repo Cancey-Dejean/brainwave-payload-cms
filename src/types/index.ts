@@ -11,3 +11,10 @@ export type LinkItem = {
   url?: string;
   newTab?: boolean;
 };
+
+export type CheckTextRowProps = {
+  id?: string;
+  text?: string;
+  description?: React.ReactNode;
+  showBorder?: boolean;
+};

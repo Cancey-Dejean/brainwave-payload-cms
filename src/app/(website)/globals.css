@@ -12,6 +12,7 @@
   --font-grotesk: "Space Grotesk", sans-serif;
 
   --color-white: #ffffff;
+  --color-black: #000000;
   --color-brand-50: #cac6dd;
   --color-brand-100: #ada8c3;
   --color-brand-150: #757185;
@@ -45,7 +46,7 @@
   }
 
   body {
-    @apply font-sora bg-brand-900 overflow-x-hidden;
+    @apply font-sora bg-brand-900;
   }
 }
 

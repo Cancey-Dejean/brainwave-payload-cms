@@ -41,7 +41,7 @@ export default async function RootLayout({
           />
           <main
             role="main"
-            className="flex flex-col pt-[4.75rem] lg:pt-[5.25rem]"
+            className="flex flex-col overflow-x-hidden pt-[4.75rem] lg:pt-[5.25rem]"
           >
             {children}
           </main>

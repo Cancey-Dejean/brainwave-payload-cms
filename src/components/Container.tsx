@@ -3,7 +3,6 @@ import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
 
 const containerSizes = {
-  wide: "max-w-[1600px]",
   base: "max-w-[1280px]",
 };
 
@@ -18,7 +17,7 @@ const Container = forwardRef<
   return (
     <div
       ref={ref}
-      className={cn("mx-auto w-full", containerSizes[size], className)}
+      className={cn("mx-auto w-full px-15", containerSizes[size], className)}
       {...props}
     >
       {children}

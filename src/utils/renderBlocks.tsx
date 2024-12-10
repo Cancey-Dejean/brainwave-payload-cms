@@ -1,6 +1,7 @@
 import Hero from "@/blocks/Hero";
 import Features from "@/blocks/Features";
 import Collaboration from "@/blocks/Collaboration";
+import Services from "@/blocks/Services";
 
 export const RenderBlocks = (section: any) => {
   const { blockType, id, ...rest } = section;
@@ -12,5 +13,7 @@ export const RenderBlocks = (section: any) => {
       return <Features {...rest} key={id} />;
     case "collaboration":
       return <Collaboration {...rest} key={id} />;
+    case "services":
+      return <Services {...rest} key={id} />;
   }
 };

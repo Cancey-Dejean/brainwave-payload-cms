@@ -1,17 +1,13 @@
 import Image from "next/image";
 import RichText from "@/blocks/RichText";
 import { cn } from "@/lib/utils";
+import { CheckTextRowProps } from "@/types";
 
 export default function CheckTextRow({
   text,
   description,
   showBorder,
-}: {
-  id?: string;
-  text?: string;
-  description?: React.ReactNode;
-  showBorder?: boolean;
-}) {
+}: CheckTextRowProps) {
   return (
     <li
       className={cn(
