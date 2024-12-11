@@ -1,6 +1,3 @@
-import React from "react";
-// import Container from "@/components/ui/container";
-// import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { Button } from "./ui/Button";
 

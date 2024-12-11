@@ -13,7 +13,7 @@ export default function Features({
   cards?: GradientCardProps[];
 }) {
   return (
-    <Section id="features">
+    <Section id="features" className="!pt-20 !pb-30">
       <Container className="relative z-2">
         <Heading
           className="text-white md:max-w-md lg:max-w-2xl"
@@ -21,7 +21,7 @@ export default function Features({
         />
 
         {cards && (
-          <div className="mb-10 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             {cards.map((card) => (
               <GradientCard
                 className="text-brand-100"

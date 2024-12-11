@@ -50,7 +50,7 @@ export default function Hero({
 
   return (
     <Section
-      className="-mt-40"
+      className="-mt-40 py-32 !pb-0"
       crossesOffset="lg:translate-y-[4.75rem] overflow-x-hidden"
       id="hero"
     >

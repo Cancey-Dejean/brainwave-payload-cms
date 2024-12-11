@@ -33,6 +33,7 @@ export default async function RootLayout({
   const socialMedia = siteSettings?.socialMedia;
 
   const { isEnabled: isDraftMode } = await draftMode();
+
   return (
     <html lang="en">
       <body

@@ -23,7 +23,7 @@ export default function Pricing({
 }) {
   // console.log(layout[4]);
   return (
-    <Section className="overflow-hidden" id="pricing">
+    <Section className="overflow-hidden py-16 md:py-20" id="pricing">
       <Container className="relative z-2">
         <div className="relative mb-[6.5rem] hidden justify-center lg:flex">
           <Image

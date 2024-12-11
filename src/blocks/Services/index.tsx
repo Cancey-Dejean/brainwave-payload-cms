@@ -34,7 +34,7 @@ export default function Services({
   };
 }) {
   return (
-    <Section id="how-to-use">
+    <Section id="how-to-use" className="py-16 md:py-20">
       <Container className="text-white">
         <Heading title={headline} text={description} />
 

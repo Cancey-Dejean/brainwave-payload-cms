@@ -110,12 +110,9 @@ export default function Header({
         </Link>
 
         <nav
-          // className={`${
-          //   openNavigation ? "flex" : "hidden"
-          // } bg-brand-900 fixed top-[5rem] right-0 bottom-0 left-0 xl:static xl:mx-auto xl:flex xl:bg-transparent`}
           className={cn(
             "bg-brand-900 fixed top-[5rem] right-0 bottom-0 left-0 xl:static xl:mx-auto xl:flex xl:bg-transparent",
-            openNavigation ? "flex" : "hidden",
+            openNavigation ? "flex justify-center" : "hidden",
           )}
         >
           <div className="relative z-2 flex flex-col items-center justify-center lg:flex-row">

@@ -46,3 +46,8 @@ export type RoadmapCardProps = {
   title?: string;
   description?: string;
 };
+
+export type SocialMedia = {
+  label: string;
+  url: string;
+};

@@ -1,13 +1,13 @@
 import Container from "@/components/Container";
 import Section from "@/components/Section";
+import { SocialMedia } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
-export default function Footer({ socialMedia }: { socialMedia: any }) {
+export default function Footer({ socialMedia }: { socialMedia: SocialMedia }) {
   return (
     <footer className="mt-auto">
-      <Section className="!px-0 !py-10">
+      <Section className="!py-10" showCrosses>
         <Container className="flex items-center justify-center gap-10 max-sm:flex-col sm:justify-between">
           <p className="caption text-brand-150 lg:block">
             © {new Date().getFullYear()}. All rights reserved.

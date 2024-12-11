@@ -35,7 +35,7 @@ export default function Collaboration({
     "bg-brand-800 relative -top-[1.6rem] flex size-[3.2rem] rounded-xl border border-white/15 [&>img]:m-auto [&>img]:h-8 [&>img]:object-contain";
 
   return (
-    <Section>
+    <Section className="hidden py-10 md:block lg:py-20 xl:py-40" showCrosses>
       <Container className="md:flex">
         <div className="md:max-w-[25rem]">
           <h2 className="h2 mb-4 text-white md:mb-8">{headline}</h2>
@@ -53,7 +53,7 @@ export default function Collaboration({
           </Button>
         </div>
 
-        <div className="mt-10 lg:ml-auto xl:max-w-[38rem]">
+        <div className="mt-10 w-full lg:ml-auto xl:max-w-[38rem]">
           <div className="text-brand-150">
             <RichText
               content={topDescription as any}

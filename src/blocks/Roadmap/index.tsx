@@ -18,7 +18,7 @@ export default function Roadmap({
   cards?: RoadmapCardProps[];
 }) {
   return (
-    <Section className="overflow-hidden" id="roadmap">
+    <Section className="overflow-hidden py-16 md:py-20" id="roadmap">
       <Container className="md:pb-10">
         <div className="text-white">
           <Heading tag={bracketText} title={headline} />
