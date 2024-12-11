@@ -3,6 +3,7 @@ import Features from "@/blocks/Features";
 import Collaboration from "@/blocks/Collaboration";
 import Services from "@/blocks/Services";
 import Pricing from "@/blocks/Pricing";
+import Roadmap from "@/blocks/Roadmap";
 
 export const RenderBlocks = (section: any) => {
   const { blockType, id, ...rest } = section;
@@ -18,5 +19,7 @@ export const RenderBlocks = (section: any) => {
       return <Services {...rest} key={id} />;
     case "pricing":
       return <Pricing {...rest} key={id} />;
+    case "roadmap":
+      return <Roadmap {...rest} key={id} />;
   }
 };

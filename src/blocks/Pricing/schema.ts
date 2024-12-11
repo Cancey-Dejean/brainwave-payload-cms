@@ -73,12 +73,6 @@ export const Pricing: Block = {
         },
       ],
     },
-    // {
-    //   name: "linkText",
-    //   label: "Link Text",
-    //   type: "group",
-    //   fields: [LabelField, UrlField, NewTabField],
-    // },
     {
       name: "linkText",
       label: "Button",

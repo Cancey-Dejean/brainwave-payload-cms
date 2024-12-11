@@ -30,8 +30,10 @@ export default function Collaboration({
 }) {
   const iconContainerStyles =
     "absolute top-0 left-1/2 -ml-[1.6rem] h-1/2 origin-bottom";
+
   const iconInnerStyles =
     "bg-brand-800 relative -top-[1.6rem] flex size-[3.2rem] rounded-xl border border-white/15 [&>img]:m-auto [&>img]:h-8 [&>img]:object-contain";
+
   return (
     <Section>
       <Container className="md:flex">

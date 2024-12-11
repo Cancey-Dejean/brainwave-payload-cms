@@ -299,6 +299,43 @@ export interface Page {
             blockName?: string | null;
             blockType: 'pricing';
           }
+        | {
+            bracketText?: string | null;
+            headline?: string | null;
+            cards?:
+              | {
+                  colorful?: boolean | null;
+                  date?: string | null;
+                  status?: ('done' | 'in-progress' | 'planned') | null;
+                  image?: (number | null) | Media;
+                  title?: string | null;
+                  description?: {
+                    root: {
+                      type: string;
+                      children: {
+                        type: string;
+                        version: number;
+                        [k: string]: unknown;
+                      }[];
+                      direction: ('ltr' | 'rtl') | null;
+                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                      indent: number;
+                      version: number;
+                    };
+                    [k: string]: unknown;
+                  } | null;
+                  id?: string | null;
+                }[]
+              | null;
+            button: {
+              label: string;
+              url: string;
+              newTab?: boolean | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'roadmap';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -555,6 +592,32 @@ export interface PagesSelect<T extends boolean = true> {
                     id?: T;
                   };
               linkText?:
+                | T
+                | {
+                    label?: T;
+                    url?: T;
+                    newTab?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        roadmap?:
+          | T
+          | {
+              bracketText?: T;
+              headline?: T;
+              cards?:
+                | T
+                | {
+                    colorful?: T;
+                    date?: T;
+                    status?: T;
+                    image?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              button?:
                 | T
                 | {
                     label?: T;

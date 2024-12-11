@@ -37,3 +37,12 @@ export type PricingCardProps = {
   features?: Feature[];
   plan?: "basic" | "premium" | "enterprise";
 };
+
+export type RoadmapCardProps = {
+  colorful?: boolean;
+  date?: string;
+  status?: "done" | "in progress" | "planned";
+  image?: SimpleImage;
+  title?: string;
+  description?: string;
+};
