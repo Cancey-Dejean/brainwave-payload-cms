@@ -4,7 +4,11 @@ import { SocialMedia } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Footer({ socialMedia }: { socialMedia: SocialMedia }) {
+export default function Footer({
+  socialMedia,
+}: {
+  socialMedia: SocialMedia[];
+}) {
   return (
     <footer className="mt-auto">
       <Section className="!py-10" showCrosses>

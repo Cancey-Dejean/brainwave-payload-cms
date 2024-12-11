@@ -8,8 +8,8 @@
 //   );
 // }
 
-import PageTemplate, { generateMetadata } from "./[slug]/page";
+import PageTemplate from "./[slug]/page"; // { generateMetadata }
 
 export default PageTemplate;
 
-export { generateMetadata };
+// export { generateMetadata };

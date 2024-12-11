@@ -4,12 +4,12 @@ import { Button } from "./ui/Button";
 export default function PageNotFound({
   title = "404",
   message = "This page could not be found.",
-  buttonText = "Go home",
+  buttonLabel = "Go home",
   buttonUrl = "/",
 }: {
   title?: string;
   message?: string;
-  buttonText?: string;
+  buttonLabel?: string;
   buttonUrl?: string;
 }) {
   return (
@@ -18,8 +18,8 @@ export default function PageNotFound({
         <h1 className="text-6xl font-bold">{title}</h1>
         <p>{message}</p>
 
-        <Button asChild>
-          <Link href={buttonUrl}>{buttonText}</Link>
+        <Button as="a" href={buttonUrl}>
+          {buttonLabel}
         </Button>
       </div>
     </section>

@@ -7,33 +7,33 @@ import config from "@payload-config";
 import AddContent from "@/utils/add-content";
 import { RenderBlocks } from "@/utils/renderBlocks";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const resolvedParams = await params;
-  const slug = resolvedParams.slug || "home";
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: Promise<{ slug: string }>;
+// }): Promise<Metadata> {
+//   const resolvedParams = await params;
+//   const slug = resolvedParams.slug || "home";
 
-  const page = await queryPageBySlug({
-    slug,
-  });
+//   const page = await queryPageBySlug({
+//     slug,
+//   });
 
-  const { title, description, image } = page?.meta || {};
+//   const { title, description, image } = page?.meta || {};
 
-  return {
-    title: title,
-    description: description,
-    openGraph: {
-      title: title || "",
-      images: [
-        {
-          url: `${process.env.NEXT_PUBLIC_SERVER_URL}/${(image as Media)?.url || ""}`,
-        },
-      ],
-    },
-  };
-}
+//   return {
+//     title: title,
+//     description: description,
+//     openGraph: {
+//       title: title || "",
+//       images: [
+//         {
+//           url: `${process.env.NEXT_PUBLIC_SERVER_URL}/${(image as Media)?.url || ""}`,
+//         },
+//       ],
+//     },
+//   };
+// }
 
 // revalidates every hour
 // export const revalidate = 3600;

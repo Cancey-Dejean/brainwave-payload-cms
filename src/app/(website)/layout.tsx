@@ -8,7 +8,7 @@ import { LivePreviewListener } from "@/utils/live-preview-listener";
 import ButtonGradient from "@/components/ui/Button/ButtonGradient";
 import config from "@payload-config";
 import { getPayload } from "payload";
-import { LinkItem, SimpleImage } from "@/types";
+import { LinkItem, SimpleImage, SocialMedia } from "@/types";
 import Footer from "@/components/ui/Footer";
 
 export default async function RootLayout({
@@ -52,7 +52,7 @@ export default async function RootLayout({
           >
             {children}
           </main>
-          <Footer socialMedia={socialMedia} />
+          <Footer socialMedia={socialMedia as SocialMedia[]} />
           <ButtonGradient />
         </div>
         {isDraftMode && <PreviewMode />}

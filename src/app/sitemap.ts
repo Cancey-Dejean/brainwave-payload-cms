@@ -7,12 +7,9 @@ export const revalidate = 3600;
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const payload = await getPayload({ config });
 
-  const [pages, posts] = await Promise.all([
+  const [pages] = await Promise.all([
     payload.find({
       collection: "pages",
-    }),
-    payload.find({
-      collection: "posts",
     }),
   ]);
 
@@ -22,13 +19,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${process.env.NEXT_PUBLIC_SERVER_URL}/${page.slug}`,
     }));
 
-  const allPosts = posts.docs.map((post: { slug: string | null }) => ({
-    url: `${process.env.NEXT_PUBLIC_SERVER_URL}/blog/${post.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "daily",
-    priority: 0.5,
-  }));
-
   return [
     {
       url: `${process.env.NEXT_PUBLIC_SERVER_URL}`,
@@ -37,12 +27,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     ...allPages,
-    {
-      url: `${process.env.NEXT_PUBLIC_SERVER_URL}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.5,
-    },
-    ...allPosts,
   ];
 }

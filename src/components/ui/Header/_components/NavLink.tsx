@@ -10,7 +10,6 @@ type NavLinkProps = LinkItem & {
 };
 
 export default function NavLink({
-  id,
   label,
   url,
   newTab,
@@ -20,7 +19,6 @@ export default function NavLink({
 }: NavLinkProps) {
   return (
     <Link
-      key={id}
       href={url || "#"}
       className={cn(
         "font-code hover:text-primary relative inline-flex items-center gap-2 px-6 py-6 text-2xl text-white uppercase transition-colors md:py-8 lg:-mr-0.25 lg:px-12 lg:text-xs lg:leading-5 lg:font-semibold lg:text-white/50 lg:hover:text-white",
