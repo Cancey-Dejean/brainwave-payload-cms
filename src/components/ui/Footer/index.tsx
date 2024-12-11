@@ -14,7 +14,7 @@ export default function Footer({
       <Section className="!py-10" showCrosses>
         <Container className="flex items-center justify-center gap-10 max-sm:flex-col sm:justify-between">
           <p className="caption text-brand-150 lg:block">
-            ©{new Date().getFullYear()}. All rights reserved.
+            ©{new Date().getFullYear()} Brainwave. All rights reserved.
           </p>
 
           {socialMedia.length > 0 && (
