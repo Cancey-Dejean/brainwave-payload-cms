@@ -9,6 +9,7 @@ import ButtonGradient from "@/components/ui/Button/ButtonGradient";
 import config from "@payload-config";
 import { getPayload } from "payload";
 import { LinkItem, SimpleImage } from "@/types";
+import Footer from "@/components/ui/Footer";
 
 export default async function RootLayout({
   children,
@@ -17,15 +18,20 @@ export default async function RootLayout({
 }>) {
   const payload = await getPayload({ config });
 
-  const header = await payload.findGlobal({
-    slug: "header",
-  });
+  const [header, siteSettings] = await Promise.all([
+    payload.findGlobal({
+      slug: "header",
+    }),
+    payload.findGlobal({
+      slug: "site-settings",
+    }),
+  ]);
 
   const { primaryMenu, secondaryMenu, logo } = header;
   const secondaryMenuItems = secondaryMenu?.[0].menu;
   const ctaButton = secondaryMenu?.[0].ctaButton;
+  const socialMedia = siteSettings?.socialMedia;
 
-  // console.log(secondaryMenu);
   const { isEnabled: isDraftMode } = await draftMode();
   return (
     <html lang="en">
@@ -45,7 +51,7 @@ export default async function RootLayout({
           >
             {children}
           </main>
-          {/* <Footer /> */}
+          <Footer socialMedia={socialMedia} />
           <ButtonGradient />
         </div>
         {isDraftMode && <PreviewMode />}

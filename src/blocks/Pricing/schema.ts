@@ -1,4 +1,3 @@
-import { PRICING_PLANS } from "@/constants";
 import { buttonField } from "@/lib/fields/buttonField";
 import { LabelField, NewTabField, UrlField } from "@/lib/fields/linkFields";
 import { Block } from "payload";

@@ -57,7 +57,7 @@ export default async function PageContent({
 
   const layout = page?.layout || [];
 
-  console.log(layout[5]);
+  // console.log(layout[5]);
 
   return (
     <>
