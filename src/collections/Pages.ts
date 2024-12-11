@@ -1,6 +1,7 @@
 import { Collaboration } from "@/blocks/Collaboration/schema";
 import { Features } from "@/blocks/Features/schema";
 import { Hero } from "@/blocks/Hero/schema";
+import { Pricing } from "@/blocks/Pricing/schema";
 import { Services } from "@/blocks/Services/schema";
 import { VERSION_INTERVAL } from "@/constants";
 import { slugGeneratorField } from "@/lib/fields/slugGeneratorField";
@@ -62,7 +63,6 @@ export const Pages: CollectionConfig = {
       required: true,
       admin: {
         position: "sidebar",
-        // condition: (data) => Boolean(data?.title),
       },
     },
     slugGeneratorField,
@@ -70,7 +70,7 @@ export const Pages: CollectionConfig = {
       name: "layout",
       label: "Layout",
       type: "blocks",
-      blocks: [Hero, Features, Collaboration, Services],
+      blocks: [Hero, Features, Collaboration, Services, Pricing],
     },
   ],
 };

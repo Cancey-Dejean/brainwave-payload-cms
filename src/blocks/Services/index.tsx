@@ -16,14 +16,6 @@ export default function Services({
   featuredCard,
   cardOne,
   cardTwo,
-  serviceCard1Image,
-  serviceCard1Title,
-  serviceCard1Desc,
-  serviceCard1ChatMessage,
-  serviceCard2Image,
-  serviceCard2Title,
-  serviceCard2Desc,
-  serviceCard2ChatMessage,
 }: {
   headline: string;
   description?: string;
@@ -40,18 +32,7 @@ export default function Services({
     cardTwoImage?: SimpleImage;
     chatMessage?: string;
   };
-
-  serviceCard1Image?: string;
-  serviceCard1Title?: string;
-  serviceCard1Desc?: string;
-  serviceCard1ChatMessage?: string;
-  serviceCard2Image?: string;
-  serviceCard2Title?: string;
-  serviceCard2Desc?: string;
-  serviceCard2ChatMessage?: string;
 }) {
-  console.log(cardOne);
-
   return (
     <Section id="how-to-use">
       <Container className="text-white">

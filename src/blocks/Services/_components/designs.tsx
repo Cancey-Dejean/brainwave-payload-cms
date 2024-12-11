@@ -36,7 +36,7 @@ export const VideoChatMessage = ({ text }: { text: string }) => {
           alt="Brainwave"
         />
       </div>
-      <p className="tagline text-brand-100 absolute right-3 bottom-2 text-[0.625rem] uppercase">
+      <p className="tagline font-grotesk text-brand-100 absolute right-3 bottom-2 text-[0.625rem] uppercase">
         just now
       </p>
       <ChatBubbleWing

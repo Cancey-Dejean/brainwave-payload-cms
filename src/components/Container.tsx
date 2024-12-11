@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
 
 const containerSizes = {
-  base: "max-w-[1280px]",
+  base: "max-w-[1300px]",
 };
 
 const Container = forwardRef<

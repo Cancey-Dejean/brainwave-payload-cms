@@ -6,7 +6,6 @@ export type SimpleImage = {
 };
 
 export type LinkItem = {
-  id?: string;
   label: string;
   url?: string;
   newTab?: boolean;
@@ -24,4 +23,17 @@ export type ServiceCard = {
   title?: string;
   description?: string;
   chatMessage?: string;
+};
+
+export type Feature = {
+  text: string;
+};
+
+export type PricingCardProps = {
+  title: string;
+  description?: string;
+  price?: string | null;
+  children?: React.ReactNode;
+  features?: Feature[];
+  plan?: "basic" | "premium" | "enterprise";
 };

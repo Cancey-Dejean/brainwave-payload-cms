@@ -1,5 +1,4 @@
 import { Block } from "payload";
-import { buttonField } from "@/lib/fields/buttonField";
 import { LabelField, NewTabField, UrlField } from "@/lib/fields/linkFields";
 
 export const Hero: Block = {

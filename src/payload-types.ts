@@ -266,6 +266,39 @@ export interface Page {
             blockName?: string | null;
             blockType: 'services';
           }
+        | {
+            topImage?: (number | null) | Media;
+            bracketText?: string | null;
+            headline?: string | null;
+            plans?:
+              | {
+                  plan?: ('basic' | 'premium' | 'enterprise') | null;
+                  title?: string | null;
+                  description?: string | null;
+                  price?: string | null;
+                  button: {
+                    label: string;
+                    url: string;
+                    newTab?: boolean | null;
+                  };
+                  features?:
+                    | {
+                        title?: string | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            linkText: {
+              label: string;
+              url: string;
+              newTab?: boolean | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'pricing';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -489,6 +522,44 @@ export interface PagesSelect<T extends boolean = true> {
                     cardTwoDescription?: T;
                     cardTwoImage?: T;
                     chatMessage?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        pricing?:
+          | T
+          | {
+              topImage?: T;
+              bracketText?: T;
+              headline?: T;
+              plans?:
+                | T
+                | {
+                    plan?: T;
+                    title?: T;
+                    description?: T;
+                    price?: T;
+                    button?:
+                      | T
+                      | {
+                          label?: T;
+                          url?: T;
+                          newTab?: T;
+                        };
+                    features?:
+                      | T
+                      | {
+                          title?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              linkText?:
+                | T
+                | {
+                    label?: T;
+                    url?: T;
+                    newTab?: T;
                   };
               id?: T;
               blockName?: T;
