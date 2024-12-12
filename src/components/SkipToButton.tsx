@@ -4,8 +4,8 @@ export default function SkipToButton({
   url = "#main",
   text = "content",
 }: {
-  url: string;
-  text: string;
+  url?: string;
+  text?: string;
 }) {
   return (
     <a

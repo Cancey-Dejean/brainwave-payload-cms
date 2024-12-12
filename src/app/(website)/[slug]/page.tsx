@@ -77,7 +77,7 @@ export async function generateStaticParams() {
     const payload = await getPayload({ config });
     const pages = await payload.find({
       collection: "pages",
-      depth: 1, // Limit the depth of relationships to prevent circular references
+      depth: 3, // Limit the depth of relationships to prevent circular references
     });
 
     return pages.docs
