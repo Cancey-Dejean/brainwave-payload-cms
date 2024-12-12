@@ -35,17 +35,19 @@ export default function RoadmapCard({
             <TagLine>{date}</TagLine>
 
             <div className="text-brand-900 flex items-center rounded bg-white px-4 py-1">
-              <Image
-                className="mr-2.5"
-                src={
-                  status === "done"
-                    ? "/images/check-02.svg"
-                    : "/images/loading-01.svg"
-                }
-                width={16}
-                height={16}
-                alt={`${status}` + " icon"}
-              />
+              <div className="relative size-4">
+                <Image
+                  className="mr-2.5 object-contain"
+                  src={
+                    status === "done"
+                      ? "/images/check-02.svg"
+                      : "/images/loading-01.svg"
+                  }
+                  fill
+                  sizes="16px"
+                  alt={`${status}` + " icon"}
+                />
+              </div>
               <div className="tagline">{status}</div>
             </div>
           </div>

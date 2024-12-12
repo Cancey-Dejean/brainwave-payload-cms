@@ -69,13 +69,17 @@ export default function ServiceCard2({
       </div>
 
       <div className="bg-brand-900 relative h-[20rem] overflow-hidden rounded-xl md:h-[25rem]">
-        <Image
-          src={image?.url || "https://dummyimage.com/520x400.png/ac6aff/ffffff"}
-          className="h-full w-full object-cover"
-          width={520}
-          height={400}
-          alt={image?.alt || "Alt text"}
-        />
+        <div className="relative h-full w-[520px]">
+          <Image
+            src={
+              image?.url || "https://dummyimage.com/520x400.png/ac6aff/ffffff"
+            }
+            className="h-full w-full object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, 520px"
+            alt={image?.alt || "Alt text"}
+          />
+        </div>
 
         {chatMessage && <VideoChatMessage text={chatMessage} />}
         <VideoBar />

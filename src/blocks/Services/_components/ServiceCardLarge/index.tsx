@@ -22,13 +22,17 @@ export default function ServiceCardLarge({
   return (
     <div className="relative z-1 mx-auto mb-5 flex h-[39rem] w-full max-w-[1280px] items-center overflow-hidden rounded-3xl border border-white/10 p-8 lg:p-20 xl:h-[46rem]">
       <div className="pointer-events-none absolute top-0 left-0 h-full w-full md:w-3/5 xl:w-auto">
-        <Image
-          className="h-full w-full object-cover md:object-right"
-          width={800}
-          alt={image?.alt || "Alt Text"}
-          height={730}
-          src={image?.url || "https://dummyimage.com/800x730.png/ac6aff/ffffff"}
-        />
+        <div className="relative size-[800px]">
+          <Image
+            className="object-cover"
+            fill
+            alt={image?.alt || "Alt Text"}
+            src={
+              image?.url || "https://dummyimage.com/800x730.png/ac6aff/ffffff"
+            }
+            sizes="(max-width: 768px) 100vw, 800px"
+          />
+        </div>
       </div>
 
       <div className="relative z-1 ml-auto max-w-[17rem]">

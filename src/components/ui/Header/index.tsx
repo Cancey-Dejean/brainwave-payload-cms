@@ -99,10 +99,10 @@ export default function Header({
       )}
     >
       <div className="flex items-center px-5 max-xl:py-4 lg:px-7.5 xl:px-10">
-        <Link className="w-[12rem]" href="#hero">
+        <Link className="max-w-[12rem]" href="#hero">
           <Image
             src={logo?.url || "https://dummyimage.com/190x40.png/ac6aff/ffffff"}
-            width={190}
+            width={192}
             height={40}
             alt={logo?.alt || "Brainwave Logo"}
             priority

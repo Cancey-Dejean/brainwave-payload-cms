@@ -32,7 +32,7 @@ export default function Collaboration({
     "absolute top-0 left-1/2 -ml-[1.6rem] h-1/2 origin-bottom";
 
   const iconInnerStyles =
-    "bg-brand-800 relative -top-[1.6rem] flex size-[3.2rem] rounded-xl border border-white/15 [&>img]:m-auto [&>img]:h-8 [&>img]:object-contain";
+    "bg-brand-800 relative -top-[1.6rem] flex items-center justify-center size-[3.2rem] rounded-xl border border-white/15 [&>img]:m-auto [&>img]:h-8 [&>img]:object-contain";
 
   return (
     <Section className="hidden py-10 md:block lg:py-20 xl:py-40" showCrosses>
@@ -80,161 +80,140 @@ export default function Collaboration({
             <ul>
               <li className={cn(iconContainerStyles, "rotate-0")}>
                 <div className={cn(iconInnerStyles, "-rotate-0")}>
-                  <Image
-                    width={34}
-                    height={34}
-                    alt={circleImages?.[0]?.icon?.alt || "App Icon"}
-                    src={
-                      circleImages?.[0]?.icon?.url ||
-                      "/images/collaboration/figma.png"
-                    }
-                  />
+                  <div className="relative flex size-[34px] items-center justify-center">
+                    <Image
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 34px"
+                      alt={circleImages?.[0]?.icon?.alt || "App Icon"}
+                      src={
+                        circleImages?.[0]?.icon?.url ||
+                        "/images/collaboration/figma.png"
+                      }
+                    />
+                  </div>
                 </div>
               </li>
 
               <li className={cn(iconContainerStyles, "rotate-45")}>
                 <div className={cn(iconInnerStyles, "-rotate-45")}>
-                  <Image
-                    width={34}
-                    height={34}
-                    alt={circleImages?.[1]?.icon?.alt || "App Icon"}
-                    src={
-                      circleImages?.[1]?.icon?.url ||
-                      "/images/collaboration/figma.png"
-                    }
-                  />
+                  <div className="relative flex size-[34px] items-center justify-center">
+                    <Image
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 34px"
+                      alt={circleImages?.[1]?.icon?.alt || "App Icon"}
+                      src={
+                        circleImages?.[1]?.icon?.url ||
+                        "/images/collaboration/figma.png"
+                      }
+                    />
+                  </div>
                 </div>
               </li>
 
               <li className={cn(iconContainerStyles, "rotate-90")}>
                 <div className={cn(iconInnerStyles, "-rotate-90")}>
-                  <Image
-                    width={34}
-                    height={34}
-                    alt={circleImages?.[2]?.icon?.alt || "App Icon"}
-                    src={
-                      circleImages?.[2]?.icon?.url ||
-                      "/images/collaboration/figma.png"
-                    }
-                  />
+                  <div className="relative flex size-[34px] items-center justify-center">
+                    <Image
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 34px"
+                      alt={circleImages?.[2]?.icon?.alt || "App Icon"}
+                      src={
+                        circleImages?.[2]?.icon?.url ||
+                        "/images/collaboration/figma.png"
+                      }
+                    />
+                  </div>
                 </div>
               </li>
 
               <li className={cn(iconContainerStyles, "rotate-135")}>
                 <div className={cn(iconInnerStyles, "-rotate-135")}>
-                  <Image
-                    width={34}
-                    height={34}
-                    alt={circleImages?.[3]?.icon?.alt || "App Icon"}
-                    src={
-                      circleImages?.[3]?.icon?.url ||
-                      "/images/collaboration/figma.png"
-                    }
-                  />
+                  <div className="relative flex size-[34px] items-center justify-center">
+                    <Image
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 34px"
+                      alt={circleImages?.[3]?.icon?.alt || "App Icon"}
+                      src={
+                        circleImages?.[3]?.icon?.url ||
+                        "/images/collaboration/figma.png"
+                      }
+                    />
+                  </div>
                 </div>
               </li>
 
               <li className={cn(iconContainerStyles, "rotate-180")}>
                 <div className={cn(iconInnerStyles, "-rotate-180")}>
-                  <Image
-                    width={34}
-                    height={34}
-                    alt={circleImages?.[4]?.icon?.alt || "App Icon"}
-                    src={
-                      circleImages?.[4]?.icon?.url ||
-                      "/images/collaboration/figma.png"
-                    }
-                  />
+                  <div className="relative flex size-[34px] items-center justify-center">
+                    <Image
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 34px"
+                      alt={circleImages?.[4]?.icon?.alt || "App Icon"}
+                      src={
+                        circleImages?.[4]?.icon?.url ||
+                        "/images/collaboration/figma.png"
+                      }
+                    />
+                  </div>
                 </div>
               </li>
 
               <li className={cn(iconContainerStyles, "rotate-225")}>
                 <div className={cn(iconInnerStyles, "-rotate-225")}>
-                  <Image
-                    width={34}
-                    height={34}
-                    alt={circleImages?.[5]?.icon?.alt || "App Icon"}
-                    src={
-                      circleImages?.[5]?.icon?.url ||
-                      "/images/collaboration/figma.png"
-                    }
-                  />
+                  <div className="relative flex size-[34px] items-center justify-center">
+                    <Image
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 34px"
+                      alt={circleImages?.[5]?.icon?.alt || "App Icon"}
+                      src={
+                        circleImages?.[5]?.icon?.url ||
+                        "/images/collaboration/figma.png"
+                      }
+                    />
+                  </div>
                 </div>
               </li>
 
               <li className={cn(iconContainerStyles, "rotate-270")}>
                 <div className={cn(iconInnerStyles, "-rotate-270")}>
-                  <Image
-                    width={34}
-                    height={34}
-                    alt={circleImages?.[6]?.icon?.alt || "App Icon"}
-                    src={
-                      circleImages?.[6]?.icon?.url ||
-                      "/images/collaboration/figma.png"
-                    }
-                  />
+                  <div className="relative flex size-[34px] items-center justify-center">
+                    <Image
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 34px"
+                      alt={circleImages?.[6]?.icon?.alt || "App Icon"}
+                      src={
+                        circleImages?.[6]?.icon?.url ||
+                        "/images/collaboration/figma.png"
+                      }
+                    />
+                  </div>
                 </div>
               </li>
 
               <li className={cn(iconContainerStyles, "rotate-315")}>
                 <div className={cn(iconInnerStyles, "-rotate-315")}>
-                  <Image
-                    width={34}
-                    height={34}
-                    alt={circleImages?.[7]?.icon?.alt || "App Icon"}
-                    src={
-                      circleImages?.[7]?.icon?.url ||
-                      "/images/collaboration/figma.png"
-                    }
-                  />
+                  <div className="relative flex size-[34px] items-center justify-center">
+                    <Image
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 34px"
+                      alt={circleImages?.[7]?.icon?.alt || "App Icon"}
+                      src={
+                        circleImages?.[7]?.icon?.url ||
+                        "/images/collaboration/figma.png"
+                      }
+                    />
+                  </div>
                 </div>
               </li>
             </ul>
-
-            {/* {circleImages && (
-              <ul>
-                {circleImages.map((image, index) => (
-                  <li
-                    key={index}
-                    className={cn(
-                      "absolute -ml-[1.6rem] h-1/2 origin-bottom",
-                      index === 0 && "top-0 left-1/2 rotate-x-0",
-                      index === 1 && "top-0 left-1/2 rotate-x-[45deg]",
-                      index === 2 && "top-0 left-1/2 rotate-x-[90deg]",
-                      index === 3 && "top-0 left-1/2 rotate-x-[135deg]",
-                      index === 4 && "top-0 left-1/2 rotate-x-[180deg]",
-                      index === 5 && "top-0 left-1/2 rotate-x-[225deg]",
-                      index === 6 && "top-0 left-1/2 rotate-x-[270deg]",
-                      index === 7 && "top-0 left-1/2 rotate-x-[315deg]",
-                    )}
-                  >
-                    <div
-                      className={cn(
-                        "bg-brand-800 relative -top-[1.6rem] flex h-[3.2rem] w-[3.2rem] rounded-xl border border-white/15",
-                        index === 0 && "-rotate-x-0",
-                        index === 1 && "-rotate-x-[45deg]",
-                        index === 2 && "-rotate-x-[90deg]",
-                        index === 3 && "-rotate-x-[135deg]",
-                        index === 4 && "-rotate-x-[180deg]",
-                        index === 5 && "-rotate-x-[225deg]",
-                        index === 6 && "-rotate-x-[270deg]",
-                        index === 7 && "-rotate-x-[315deg]",
-                      )}
-                    >
-                      <Image
-                        className="m-auto max-w-[24px]"
-                        width={image.icon.width || 34}
-                        height={image.icon.height || 34}
-                        alt={image.icon.alt || "App Icon"}
-                        src={
-                          image.icon.url || "/images/collaboration/figma.png"
-                        }
-                      />
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            )} */}
 
             <LeftCurve />
             <RightCurve />

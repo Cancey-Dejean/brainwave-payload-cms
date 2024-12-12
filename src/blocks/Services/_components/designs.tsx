@@ -4,13 +4,15 @@ import { ChatBubbleWing } from "@/components/icons";
 export const Gradient = () => {
   return (
     <div className="pointer-events-none absolute top-0 -left-[10rem] h-[56.625rem] w-[56.625rem] opacity-50 mix-blend-color-dodge">
-      <Image
-        className="absolute top-1/2 left-1/2 h-[88.5625rem] w-[79.5625rem] max-w-[79.5625rem] -translate-x-1/2 -translate-y-1/2"
-        src={"/images/gradient.png"}
-        width={1417}
-        height={1417}
-        alt="Gradient"
-      />
+      <div className="relative size-[56.625rem]">
+        <Image
+          className="absolute top-1/2 left-1/2 h-[88.5625rem] w-[79.5625rem] max-w-[79.5625rem] -translate-x-1/2 -translate-y-1/2 object-contain"
+          src={"/images/gradient.png"}
+          fill
+          sizes="(max-width: 768px) 100vw, 56.625rem"
+          alt="Gradient"
+        />
+      </div>
     </div>
   );
 };

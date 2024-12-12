@@ -9,10 +9,7 @@ import grid from "./grid.png";
 import check2 from "./check-02.svg";
 import loading1 from "./loading-01.svg";
 import yourlogo from "./yourlogo.svg";
-import homeSmile from "./home-smile.svg";
-import file02 from "./file-02.svg";
-import searchMd from "./search-md.svg";
-import plusSquare from "./plus-square.svg";
+
 import recording03 from "./recording-03.svg";
 import recording01 from "./recording-01.svg";
 import disc02 from "./disc-02.svg";

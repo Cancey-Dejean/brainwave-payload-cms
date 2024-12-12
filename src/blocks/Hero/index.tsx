@@ -108,18 +108,10 @@ export default function Hero({
                 )}
 
                 <ScrollParallax isAbsolutelyPositioned>
-                  <ul className="bg-brand-300/40 absolute bottom-[7.5rem] -left-[5.5rem] hidden rounded-2xl border border-white/10 px-1 py-1 backdrop-blur xl:flex">
-                    {heroIcons.map((icon, index) => (
+                  <ul className="bg-brand-300/40 absolute bottom-[7.5rem] -left-[5.5rem] hidden rounded-2xl border border-white/10 px-1 py-1 text-white backdrop-blur xl:flex">
+                    {Object.values(heroIcons).map((Icon, index) => (
                       <li className="p-5" key={index}>
-                        <Image
-                          src={
-                            icon.url ||
-                            "https://dummyimage.com/24x25.png/ac6aff/ffffff"
-                          }
-                          width={24}
-                          height={25}
-                          alt={icon.alt}
-                        />
+                        <Icon />
                       </li>
                     ))}
                   </ul>

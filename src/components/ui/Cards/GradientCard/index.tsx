@@ -92,16 +92,18 @@ export default function GradientCard({
           style={{ clipPath: "url(#benefits)" }}
         >
           <div className="absolute inset-0 opacity-5 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-10">
-            <Image
-              src={
-                backgroundImage?.url ||
-                "https:dummyimage.com/760x724.png/ac6aff/ffffff"
-              }
-              width={380}
-              height={362}
-              alt={backgroundImage?.alt || ""}
-              className="h-full w-full object-cover"
-            />
+            <div className="relative h-full w-[380px]">
+              <Image
+                src={
+                  backgroundImage?.url ||
+                  "https:dummyimage.com/760x724.png/ac6aff/ffffff"
+                }
+                fill
+                alt={backgroundImage?.alt || ""}
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 380px"
+              />
+            </div>
           </div>
         </div>
       )}
