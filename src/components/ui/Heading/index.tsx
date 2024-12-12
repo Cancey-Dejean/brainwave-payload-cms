@@ -25,7 +25,7 @@ export default function Heading({
       {title && <h2 className="h2">{title}</h2>}
 
       {text && (
-        <div className="text-brand-150">
+        <div className="text-brand-50">
           <RichText content={text as any} className="body-2 mt-4" />
         </div>
       )}

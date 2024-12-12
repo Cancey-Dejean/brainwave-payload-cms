@@ -23,7 +23,7 @@ export default function CheckTextRow({
       </div>
 
       {description && (
-        <div className="text-brand-150">
+        <div className="text-brand-50">
           <RichText content={description as any} className="body-2 mt-3" />
         </div>
       )}

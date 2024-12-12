@@ -54,7 +54,7 @@ export default function Collaboration({
         </div>
 
         <div className="mt-10 w-full lg:ml-auto xl:max-w-[38rem]">
-          <div className="text-brand-150">
+          <div className="text-brand-50">
             <RichText
               content={topDescription as any}
               className="body-2 mb-8 md:mb-16 lg:mx-auto lg:mb-32 lg:w-[22rem]"
