@@ -14,10 +14,13 @@ export const Pages: CollectionConfig = {
   slug: "pages",
   admin: {
     useAsTitle: "title",
-    livePreview: {
-      url: ({ data }) =>
-        `${getServerSideURL()}${data?.slug ? `/${data.slug}` : "/"}`,
-    },
+    livePreview:
+      process.env.NODE_ENV === "development"
+        ? {
+            url: ({ data }) =>
+              `${getServerSideURL()}${data?.slug ? `/${data.slug}` : "/"}`,
+          }
+        : undefined,
   },
   access: {
     read: ({ req }) => {
