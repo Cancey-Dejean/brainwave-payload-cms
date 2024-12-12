@@ -97,6 +97,7 @@ export default function Hero({
                   width={1034}
                   height={1512}
                   alt={image?.alt || "Main Image"}
+                  priority
                 />
 
                 {imageText && (
