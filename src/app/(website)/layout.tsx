@@ -10,6 +10,7 @@ import config from "@payload-config";
 import { getPayload } from "payload";
 import { LinkItem, SimpleImage, SocialMedia } from "@/types";
 import Footer from "@/components/ui/Footer";
+import SkipToButton from "@/components/SkipToButton";
 
 export default async function RootLayout({
   children,
@@ -37,8 +38,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sora.variable} ${sourceCodePro.variable} ${spaceGrotesk.variable}`}
+        className={`${sora.variable} ${sourceCodePro.variable} ${spaceGrotesk.variable} relative`}
       >
+        <SkipToButton url="#main" text="Content" />
+        <SkipToButton url="#footer" text="Footer" />
+
         <div className="grid min-h-[100dvh] grid-rows-[auto_1fr_auto]">
           <Header
             primaryMenu={primaryMenu as MenuItem[]}
@@ -47,6 +51,7 @@ export default async function RootLayout({
             logo={logo as SimpleImage}
           />
           <main
+            id="main"
             role="main"
             className="flex flex-col overflow-x-hidden pt-[4.75rem] lg:pt-[5.25rem]"
           >

@@ -32,12 +32,17 @@
 }
 
 @layer base {
-  * {
+  *,
+  html {
     scroll-behavior: smooth;
   }
 
   body {
     @apply font-sora bg-brand-900;
+  }
+
+  a {
+    @apply inline-block;
   }
 }
 

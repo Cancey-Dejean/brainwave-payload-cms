@@ -1,3 +1,4 @@
+import { HTMLAttributes } from "react";
 import ButtonGradient from "../Button/ButtonGradient";
 
 export type ButtonProps = {
@@ -17,7 +18,7 @@ export const Button = ({
   href,
   px,
   white = false,
-  ...rest
+  ...props
 }: ButtonProps) => {
   const classes = `cursor-pointer font-code text-xs font-bold uppercase tracking-wider relative inline-flex items-center justify-center h-11 transition-colors hover:text-primary px-7 ${
     white ? "text-brand-900" : "text-white"
@@ -25,7 +26,7 @@ export const Button = ({
   const spanClasses = "relative z-10";
 
   return (
-    <Comp className={classes} {...rest}>
+    <Comp className={classes} {...props}>
       <span className={spanClasses}>{children || "Button"}</span>
       {ButtonSvg({ white: white })}
     </Comp>

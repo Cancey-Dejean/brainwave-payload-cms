@@ -10,7 +10,7 @@ export default function Footer({
   socialMedia: SocialMedia[];
 }) {
   return (
-    <footer className="mt-auto">
+    <footer className="mt-auto" id="footer">
       <Section className="!py-10" showCrosses>
         <Container className="flex items-center justify-center gap-10 max-sm:flex-col sm:justify-between">
           <p className="caption text-brand-150 lg:block">

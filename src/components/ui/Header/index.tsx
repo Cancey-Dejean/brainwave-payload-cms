@@ -99,7 +99,7 @@ export default function Header({
       )}
     >
       <div className="flex items-center px-5 max-xl:py-4 lg:px-7.5 xl:px-10">
-        <Link className="max-w-[12rem]" href="#hero">
+        <Link className="max-w-[12rem] xl:mr-8" href="#hero">
           <Image
             src={logo?.url || "https://dummyimage.com/190x40.png/ac6aff/ffffff"}
             width={192}
