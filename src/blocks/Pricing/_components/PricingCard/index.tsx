@@ -31,7 +31,7 @@ export default function PricingCard({
         {description}
       </p>
 
-      <div className="flex h-22 items-center text-white">
+      <div className="flex items-center text-white md:h-22">
         {price && (
           <>
             <span className="h3">$</span>
