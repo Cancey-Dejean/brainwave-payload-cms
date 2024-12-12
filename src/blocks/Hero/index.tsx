@@ -148,26 +148,28 @@ export default function Hero({
             text={socialProof.title}
             className="relative z-10 mt-20 hidden text-white lg:block"
           >
-            {socialProof.logos.map(({ id, logo }) => (
-              <li
-                className="flex h-[8.5rem] flex-1 items-center justify-center"
-                key={id}
-              >
-                <>
-                  <span className="sr-only">{logo.alt}</span>
-                  <Image
-                    src={
-                      logo.url ||
-                      "https://dummyimage.com/134x28.png/ac6aff/ffffff"
-                    }
-                    width={134}
-                    height={28}
-                    alt={logo.alt || "Company Logo"}
-                    priority
-                  />
-                </>
-              </li>
-            ))}
+            <ul>
+              {socialProof.logos.map(({ id, logo }) => (
+                <li
+                  className="flex h-[8.5rem] flex-1 items-center justify-center"
+                  key={id}
+                >
+                  <>
+                    <span className="sr-only">{logo.alt}</span>
+                    <Image
+                      src={
+                        logo.url ||
+                        "https://dummyimage.com/134x28.png/ac6aff/ffffff"
+                      }
+                      width={134}
+                      height={28}
+                      alt={logo.alt || "Company Logo"}
+                      priority
+                    />
+                  </>
+                </li>
+              ))}
+            </ul>
           </CompanyLogos>
         )}
       </Container>

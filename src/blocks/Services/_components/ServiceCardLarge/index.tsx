@@ -45,7 +45,7 @@ export default function ServiceCardLarge({
           </p>
         )}
 
-        <ul className="body-2">{children}</ul>
+        <div className="body-2">{children}</div>
       </div>
 
       {bottomText && (

@@ -46,9 +46,11 @@ export default function Services({
               image={featuredCard.image}
               bottomText={featuredCard.bottomText}
             >
-              {featuredCard?.itemList?.map((item, index) => (
-                <CheckTextRow className="px-0" key={index} {...item} />
-              ))}
+              <ul>
+                {featuredCard?.itemList?.map((item, index) => (
+                  <CheckTextRow className="px-0" key={index} {...item} />
+                ))}
+              </ul>
             </ServiceCardLarge>
           )}
 
