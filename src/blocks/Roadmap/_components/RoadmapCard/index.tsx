@@ -65,7 +65,7 @@ export default function RoadmapCard({
           </div>
           <h4 className="h4 mb-4 text-white">{title || "Title"}</h4>
 
-          <div className="text-brand-150">
+          <div className="text-brand-50">
             <RichText content={description as any} className="body-2" />
           </div>
         </div>
