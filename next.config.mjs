@@ -4,7 +4,6 @@ import { withPayload } from "@payloadcms/next/withPayload";
 const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
