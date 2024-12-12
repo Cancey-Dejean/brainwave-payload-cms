@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@payloadcms/db-postgres": "latest",
-    "@payloadcms/live-preview-react": "3.5.0",
+    "@payloadcms/live-preview-react": "latest",
     "@payloadcms/next": "latest",
     "@payloadcms/payload-cloud": "latest",
     "@payloadcms/richtext-lexical": "latest",
@@ -44,7 +44,7 @@
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.1",
     "autoprefixer": "^10.4.20",
-    "eslint": "^8",
+    "eslint": "^9.16.0",
     "eslint-config-next": "15.0.4",
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
