@@ -10,7 +10,8 @@ const CompanyLogos = ({ className, children, text }: CompanyLogosProps) => {
       <h5 className="tagline mb-6 text-center text-white/50">
         {text || "Trusted by"}
       </h5>
-      <div className="flex">{children}</div>
+
+      {children}
     </div>
   );
 };

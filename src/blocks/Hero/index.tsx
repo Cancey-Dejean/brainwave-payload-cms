@@ -148,7 +148,7 @@ export default function Hero({
             text={socialProof.title}
             className="relative z-10 mt-20 hidden text-white lg:block"
           >
-            <ul>
+            <ul className="flex">
               {socialProof.logos.map(({ id, logo }) => (
                 <li
                   className="flex h-[8.5rem] flex-1 items-center justify-center"

@@ -32,9 +32,8 @@
 }
 
 @layer base {
-  *,
   html {
-    scroll-behavior: smooth;
+    @apply scroll-pt-20 scroll-smooth;
   }
 
   body {
